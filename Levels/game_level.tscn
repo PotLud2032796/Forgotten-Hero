@@ -1,5 +1,6 @@
-[gd_scene load_steps=15 format=3 uid="uid://bmrp60xxohj5h"]
+[gd_scene load_steps=16 format=3 uid="uid://bmrp60xxohj5h"]
 
+[ext_resource type="PackedScene" uid="uid://ctvgk8ri3ylfu" path="res://Objects/Scene/Level/floor.tscn" id="1_4n5jq"]
 [ext_resource type="PackedScene" uid="uid://djv7h78y5oiql" path="res://Characters/player_mouse.tscn" id="1_q0p85"]
 [ext_resource type="Texture2D" uid="uid://rs6ictleioxr" path="res://Art/Sprout Lands - Sprites - Basic pack/Tilesets/Grass.png" id="2_3d4j5"]
 [ext_resource type="Texture2D" uid="uid://cfln8j4kx04uv" path="res://Art/Sprout Lands - Sprites - Basic pack/Tilesets/Hills.png" id="3_3hokh"]
@@ -255,8 +256,13 @@ sources/5 = SubResource("TileSetAtlasSource_r41mc")
 
 [node name="GameLevel" type="Node2D"]
 
+[node name="Active Level" type="Node2D" parent="."]
+position = Vector2(-2, 0)
+
+[node name="Floor" parent="Active Level" instance=ExtResource("1_4n5jq")]
+
 [node name="PlayerMouse" parent="." instance=ExtResource("1_q0p85")]
-position = Vector2(296, 169)
+position = Vector2(33, 99)
 max_speed = 125.0
 accel = 1000.0
 friction = 2500.0
@@ -283,3 +289,7 @@ layer_2/y_sort_enabled = false
 layer_2/y_sort_origin = 0
 layer_2/z_index = 0
 layer_2/tile_data = PackedInt32Array()
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(0, -21)
+zoom = Vector2(0.565, 0.565)
