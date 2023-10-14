@@ -1,3 +1,28 @@
-[gd_scene format=3 uid="uid://duvbuedwgmnov"]
+[gd_scene load_steps=5 format=3 uid="uid://duvbuedwgmnov"]
+
+[ext_resource type="Script" path="res://Objects/Scene/Level/Levels/level_1.gd" id="1_1fy76"]
+[ext_resource type="PackedScene" uid="uid://ctvgk8ri3ylfu" path="res://Objects/Scene/Level/floor.tscn" id="1_vb4xs"]
+[ext_resource type="PackedScene" uid="uid://s0uq4eufsj28" path="res://Objects/Scene/Level/Obstacle/barbwire.tscn" id="2_pijqx"]
+[ext_resource type="PackedScene" uid="uid://d0um0hx5pa1od" path="res://Objects/Scene/Level/finish_door.tscn" id="4_iylhd"]
 
 [node name="Level_1" type="Node2D"]
+script = ExtResource("1_1fy76")
+
+[node name="Floor" parent="." instance=ExtResource("1_vb4xs")]
+
+[node name="Area2D" parent="." instance=ExtResource("2_pijqx")]
+position = Vector2(-74, 64)
+
+[node name="Area2D2" parent="." instance=ExtResource("2_pijqx")]
+position = Vector2(66, 29)
+
+[node name="Area2D3" parent="." instance=ExtResource("2_pijqx")]
+position = Vector2(-66, -43)
+
+[node name="FinishDoor" parent="." instance=ExtResource("4_iylhd")]
+position = Vector2(-64, -146)
+
+[connection signal="player_touched" from="Area2D" to="." method="player_touched"]
+[connection signal="player_touched" from="Area2D2" to="." method="player_touched"]
+[connection signal="player_touched" from="Area2D3" to="." method="player_touched"]
+[connection signal="body_entered" from="FinishDoor" to="." method="_on_finish_door_body_entered"]

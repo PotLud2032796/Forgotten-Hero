@@ -1,6 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://s0uq4eufsj28"]
+[gd_scene load_steps=6 format=3 uid="uid://s0uq4eufsj28"]
 
-[ext_resource type="Script" path="res://Objects/Scene/Level/Obstacle/barbwire.gd" id="1_82tgu"]
+[ext_resource type="Script" path="res://Objects/Scene/Level/Obstacle/Scripts/barbwire.gd" id="1_3ks7q"]
 
 [sub_resource type="Gradient" id="Gradient_4xe6m"]
 offsets = PackedFloat32Array(0, 0.470968, 1)
@@ -9,15 +9,25 @@ colors = PackedColorArray(0, 0, 0, 1, 0.264516, 0.264516, 0.264516, 1, 1, 1, 1, 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_vyxud"]
 gradient = SubResource("Gradient_4xe6m")
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_a6u1g"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8kftk"]
 size = Vector2(108, 18)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a6u1g"]
+size = Vector2(110, 20)
+
 [node name="Area2D" type="Area2D"]
-script = ExtResource("1_82tgu")
+script = ExtResource("1_3ks7q")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(1.71875, 0.3125)
 texture = SubResource("GradientTexture2D_vyxud")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Sprite2D"]
+scale = Vector2(0.581818, 3.2)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/StaticBody2D"]
+position = Vector2(1.81794e-06, 0)
+shape = SubResource("RectangleShape2D_8kftk")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_a6u1g")
