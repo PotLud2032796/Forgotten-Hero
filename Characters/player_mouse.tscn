@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://djv7h78y5oiql"]
+
+[ext_resource type="Script" path="res://Characters/player_mouse.gd" id="1_j1q5l"]
+[ext_resource type="Texture2D" uid="uid://c8puuo2didpmd" path="res://Art/Sprout Lands - Sprites - Basic pack/Characters/Basic Charakter Spritesheet.png" id="1_m6mlc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sdxwy"]
+size = Vector2(10, 6)
+
+[node name="PlayerMouse" type="CharacterBody2D"]
+script = ExtResource("1_j1q5l")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_m6mlc")
+hframes = 4
+vframes = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 5)
+shape = SubResource("RectangleShape2D_sdxwy")
