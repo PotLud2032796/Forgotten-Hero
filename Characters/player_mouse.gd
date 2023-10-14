@@ -1,15 +1,29 @@
 extends CharacterBody2D
 
-@export var move_speed : float = 100
+@export var max_speed : float = 100
+@export var accel : float = 1500
+@export var friction : float = 600
 
-func _physics_process(_delta):
-	var input_direction = Vector2(
-		Input.get_action_strength("right") - Input.get_action_strength("left"),
-		Input.get_action_strength("down") - Input.get_action_strength("up")
-	)
+var input = Vector2.ZERO
+
+func _physics_process(delta):
+	player_movement(delta)
+
+func get_input():
+	input.x = int(Input.is_action_pressed("right")) -  int(Input.is_action_pressed("left"))
+	input.y = int(Input.is_action_pressed("down")) -  int(Input.is_action_pressed("up"))
+	return input.normalized()
+
+func player_movement(delta):
+	input = get_input()
 	
-	print(input_direction)
-	
-	velocity = input_direction * move_speed
+	if input == Vector2.ZERO:
+		if velocity.length() > (friction * delta):
+			velocity -= velocity.normalized() * (friction * delta)
+		else:
+			velocity = Vector2.ZERO
+	else:
+		velocity += (input * accel * delta)
+		velocity = velocity.limit_length(max_speed)
 	
 	move_and_slide()
