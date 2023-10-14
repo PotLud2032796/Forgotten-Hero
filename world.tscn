@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://bwmaxbrmmrv8j"]
+
+[ext_resource type="PackedScene" uid="uid://jv0xm44s315s" path="res://Turret.tscn" id="1_mgp36"]
+
+[node name="world" type="Node2D"]
+
+[node name="Enemie" parent="." instance=ExtResource("1_mgp36")]
+position = Vector2(20, 55)
