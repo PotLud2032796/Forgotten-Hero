@@ -87,7 +87,6 @@ func update_animation_paramaters(move_input : Vector2):
 func pick_new_state():
 	if(velocity != Vector2.ZERO) and is_dashing == true:
 		state_machine.travel("dash")
-		print("dashAnimation")
 	if(velocity != Vector2.ZERO) and is_dashing == false:
 		state_machine.travel("run")
 	elif(is_dashing == false):

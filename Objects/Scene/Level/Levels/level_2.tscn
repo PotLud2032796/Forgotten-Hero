@@ -2,7 +2,7 @@
 
 [ext_resource type="TileSet" uid="uid://b4np3bj8hmygb" path="res://Objects/Scene/Level/game_tile_set.tres" id="1_hjg83"]
 [ext_resource type="PackedScene" uid="uid://s0uq4eufsj28" path="res://Objects/Scene/Level/Obstacle/barbwire.tscn" id="2_00w2d"]
-[ext_resource type="PackedScene" uid="uid://d0um0hx5pa1od" path="res://Objects/Scene/Level/finish_door.tscn" id="3_4uyun"]
+[ext_resource type="PackedScene" path="res://Objects/Scene/Level/finish_door.tscn" id="3_4uyun"]
 [ext_resource type="PackedScene" uid="uid://djv7h78y5oiql" path="res://Characters/player_mouse.tscn" id="4_5xcup"]
 
 [sub_resource type="Gradient" id="Gradient_ekhhw"]

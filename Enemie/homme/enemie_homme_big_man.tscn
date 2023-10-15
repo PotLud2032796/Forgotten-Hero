@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://bg70n4t3nval1"]
+[gd_scene load_steps=9 format=3 uid="uid://cgh5i7ahd31y0"]
 
 [ext_resource type="PackedScene" uid="uid://3nm7garna6nc" path="res://Enemie/enemie.tscn" id="1_oxhie"]
 [ext_resource type="Script" path="res://Enemie/homme/enemie_homme_big_man.gd" id="2_3oort"]

@@ -19,5 +19,5 @@ func _on_enemie_robot_laser(pos):
 	add_child(laser)
 
 func _on_level_finished(_body):
-	Transition.change_scene("res://Objects/Scene/Level/Levels/level_2.tscn")
+	Transition.change_scene("res://Objects/Scene/Level/Levels/level_4.tscn")
 
