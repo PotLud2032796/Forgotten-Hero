@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://cscqwc1cfsw7i"]
+[gd_scene load_steps=4 format=3 uid="uid://dh6sadfiiaili"]
 
 [ext_resource type="Script" path="res://Enemie/laser.gd" id="1_631l0"]
 [ext_resource type="Texture2D" uid="uid://8y1m0il1ykl6" path="res://Art/homme/Human_bullet_small.png" id="2_v4fgm"]

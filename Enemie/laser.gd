@@ -21,5 +21,6 @@ func _process(delta):
 		random_angle = -25
 	
 	direction = Vector2.RIGHT.rotated(random_angle)
+	$Sprite2D.rotation = direction.angle()
 	position += direction * speed * delta
 

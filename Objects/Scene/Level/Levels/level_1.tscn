@@ -4,9 +4,9 @@
 [ext_resource type="TileSet" uid="uid://b4np3bj8hmygb" path="res://Objects/Scene/Level/game_tile_set.tres" id="2_86grb"]
 [ext_resource type="PackedScene" uid="uid://s0uq4eufsj28" path="res://Objects/Scene/Level/Obstacle/barbwire.tscn" id="2_pijqx"]
 [ext_resource type="PackedScene" uid="uid://d0um0hx5pa1od" path="res://Objects/Scene/Level/finish_door.tscn" id="4_iylhd"]
+[ext_resource type="PackedScene" path="res://Enemie/enemie.tscn" id="5_d3f0a"]
 [ext_resource type="Texture2D" uid="uid://b7p1lqlgneikt" path="res://Sprites/Ennemi/Lazer_Charge_anim1.png" id="6_d13t6"]
 [ext_resource type="PackedScene" uid="uid://djv7h78y5oiql" path="res://Characters/player_mouse.tscn" id="7_6xfi8"]
-[ext_resource type="Texture2D" uid="uid://dl0llc3bbaj25" path="res://Sprites/Ennemi/Soldat_gun_anim1.png" id="7_j4cfq"]
 
 [sub_resource type="Gradient" id="Gradient_g2yms"]
 offsets = PackedFloat32Array(0.989011, 0.992674, 1)
@@ -68,30 +68,18 @@ position = Vector2(-66, -43)
 
 [node name="Soldat" type="Node2D" parent="Elements"]
 
-[node name="SoldatGunAnim1" type="Sprite2D" parent="Elements/Soldat"]
-position = Vector2(-144, 79)
-scale = Vector2(0.3125, 0.3125)
-texture = ExtResource("7_j4cfq")
+[node name="enemieLudoStyle" parent="Elements/Soldat" instance=ExtResource("5_d3f0a")]
+position = Vector2(-145, 69)
+max_balle = 5
 
-[node name="SoldatGunAnim2" type="Sprite2D" parent="Elements/Soldat"]
-position = Vector2(-144, 42)
-scale = Vector2(0.3125, 0.3125)
-texture = ExtResource("7_j4cfq")
+[node name="enemieLudoStyle2" parent="Elements/Soldat" instance=ExtResource("5_d3f0a")]
+position = Vector2(-145, 9)
 
-[node name="SoldatGunAnim3" type="Sprite2D" parent="Elements/Soldat"]
-position = Vector2(-145, -10)
-scale = Vector2(0.3125, 0.3125)
-texture = ExtResource("7_j4cfq")
+[node name="enemieLudoStyle3" parent="Elements/Soldat" instance=ExtResource("5_d3f0a")]
+position = Vector2(-145, -63)
 
-[node name="SoldatGunAnim5" type="Sprite2D" parent="Elements/Soldat"]
-position = Vector2(-64, 5)
-scale = Vector2(0.3125, 0.3125)
-texture = ExtResource("7_j4cfq")
-
-[node name="SoldatGunAnim4" type="Sprite2D" parent="Elements/Soldat"]
-position = Vector2(-146, -63)
-scale = Vector2(0.3125, 0.3125)
-texture = ExtResource("7_j4cfq")
+[node name="enemieLudoStyle4" parent="Elements/Soldat" instance=ExtResource("5_d3f0a")]
+position = Vector2(-146, -99)
 
 [node name="Robot" type="Node2D" parent="Elements"]
 
@@ -124,3 +112,7 @@ friction = 2500.0
 [connection signal="player_touched" from="Elements/Area2D" to="." method="_on_player_touched"]
 [connection signal="player_touched" from="Elements/Area2D2" to="." method="_on_player_touched"]
 [connection signal="player_touched" from="Elements/Area2D3" to="." method="_on_player_touched"]
+[connection signal="player_laser" from="Elements/Soldat/enemieLudoStyle" to="." method="_on_enemie_laser"]
+[connection signal="player_laser" from="Elements/Soldat/enemieLudoStyle2" to="." method="_on_enemie_laser"]
+[connection signal="player_laser" from="Elements/Soldat/enemieLudoStyle3" to="." method="_on_enemie_laser"]
+[connection signal="player_laser" from="Elements/Soldat/enemieLudoStyle4" to="." method="_on_enemie_laser"]

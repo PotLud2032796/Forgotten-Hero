@@ -4,10 +4,10 @@
 [ext_resource type="Texture2D" uid="uid://br2my4qfp23uy" path="res://Art/Obstacles/Barbwire.png" id="2_al1se"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8kftk"]
-size = Vector2(46.75, 1.56986)
+size = Vector2(45.375, 1.56986)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a6u1g"]
-size = Vector2(50, 1.96232)
+size = Vector2(47, 1.96232)
 
 [node name="StaticBody2D" type="StaticBody2D"]
 scale = Vector2(1, 5.096)
@@ -19,11 +19,13 @@ scale = Vector2(1, 0.196232)
 texture = ExtResource("2_al1se")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.6875, 3.62587e-07)
 shape = SubResource("RectangleShape2D_8kftk")
 
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-0.5, -7.95352e-07)
 shape = SubResource("RectangleShape2D_a6u1g")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_body_entered"]

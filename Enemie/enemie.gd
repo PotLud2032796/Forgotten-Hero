@@ -26,7 +26,7 @@ func _process(delta):
 		can_laser = false
 		conteur = conteur +1
 		print(conteur)
-		$Timer.start()		
+		$Timer.start()
 		if conteur == max_balle:
 			can_burst = false
 			$Burst.start()
@@ -37,5 +37,4 @@ func _on_timer_timeout():
 
 func _on_burst_timeout():
 	can_burst = true
-	print("can_burst",can_burst)
 
