@@ -33,7 +33,7 @@ func _on_little_solder_human_player_laser(pos):
 	add_child(laser)
 
 
-func _on_enemie_homme_big_man_player_laser(pos):
-	var laser = laser_scene_big_human.instantiate()
-	laser.position = pos
-	add_child(laser)
+#func _on_enemie_homme_big_man_player_laser(pos):
+#	var laser = laser_scene_big_human.instantiate()
+#	laser.position = pos
+#	add_child(laser)

@@ -34,4 +34,7 @@ func _process(_delta):
 func _on_timer_timeout():
 	can_laser = true
 
+func _on_burst_timeout():
+	can_burst = true
+
 

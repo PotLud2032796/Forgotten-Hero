@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://0qjr7085k7t0" path="res://Art/homme/Soldier_gun_01.png" id="2_l40le"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w5uw8"]
-size = Vector2(42.5, 40)
+size = Vector2(38.6543, 37)
 
 [sub_resource type="Animation" id="Animation_xvxi4"]
 length = 0.001
