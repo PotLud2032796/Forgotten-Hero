@@ -1,15 +1,7 @@
-extends CharacterBody2D
-class_name enemie
+extends enemie
 
-const SPEED = 800
 
-var can_laser: bool = true
-var can_burst: bool = true
-@onready var animation_player = $AnimationPlayer
-
-var conteur = 0
-@export var max_balle = 0
-signal player_laser(pos)
+@onready var animation_playerBigMan = $AnimationPlayer2
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -43,5 +35,3 @@ func _on_burst_timeout():
 
 func _on_tempo_anim_timeout():
 	print("WAIT")
-
-

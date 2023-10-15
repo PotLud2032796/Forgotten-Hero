@@ -1,0 +1,7 @@
+[gd_scene load_steps=3 format=3 uid="uid://dpun1ijbkakhd"]
+
+[ext_resource type="PackedScene" uid="uid://3nm7garna6nc" path="res://Enemie/enemie.tscn" id="1_6gppn"]
+[ext_resource type="Script" path="res://Enemie/homme/enemieHommeLittleSoldier.gd" id="2_3gjqm"]
+
+[node name="LittleSolderHuman" instance=ExtResource("1_6gppn")]
+script = ExtResource("2_3gjqm")

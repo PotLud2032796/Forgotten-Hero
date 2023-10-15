@@ -1,11 +1,9 @@
 extends Area2D
 
-var speed: int = 200
+var speed: int = 50
 var direction: Vector2 
 var random_value  = randi_range(1,5)
 var random_angle
-var  position1: Vector2
-
 
 func _process(delta):
 	
