@@ -1,22 +1,22 @@
-[gd_scene load_steps=7 format=3 uid="uid://ch330y2q0f21i"]
+[gd_scene load_steps=10 format=3 uid="uid://blydh0r1jibku"]
 
+[ext_resource type="Script" path="res://Objects/Scene/Level/Levels/level_1.gd" id="1_cp3o1"]
 [ext_resource type="TileSet" uid="uid://b4np3bj8hmygb" path="res://Objects/Scene/Level/game_tile_set.tres" id="1_hjg83"]
 [ext_resource type="PackedScene" uid="uid://s0uq4eufsj28" path="res://Objects/Scene/Level/Obstacle/barbwire.tscn" id="2_00w2d"]
 [ext_resource type="PackedScene" uid="uid://d0um0hx5pa1od" path="res://Objects/Scene/Level/finish_door.tscn" id="3_4uyun"]
 [ext_resource type="PackedScene" uid="uid://djv7h78y5oiql" path="res://Characters/player_mouse.tscn" id="4_5xcup"]
+[ext_resource type="PackedScene" uid="uid://3nm7garna6nc" path="res://Enemie/enemie.tscn" id="5_u2i1w"]
+[ext_resource type="PackedScene" uid="uid://x76oa8uko4s4" path="res://Enemie/robot/ennemi_robot_troop.tscn" id="6_m2wjj"]
 
-[sub_resource type="Gradient" id="Gradient_ekhhw"]
+[sub_resource type="Gradient" id="Gradient_g2yms"]
 offsets = PackedFloat32Array(0.989011, 0.992674, 1)
 colors = PackedColorArray(0, 0, 0, 1, 0.216117, 0.216117, 0.216117, 1, 1, 1, 1, 1)
 
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_juc8h"]
-gradient = SubResource("Gradient_ekhhw")
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_5s3lk"]
+gradient = SubResource("Gradient_g2yms")
 
-[node name="level_2" type="Node2D"]
-
-[node name="Temporary_background" type="Sprite2D" parent="."]
-scale = Vector2(600, 380)
-texture = SubResource("GradientTexture1D_juc8h")
+[node name="Level_1" type="Node2D"]
+script = ExtResource("1_cp3o1")
 
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2(40, 106)
@@ -39,22 +39,76 @@ layer_2/y_sort_origin = 0
 layer_2/z_index = 0
 layer_2/tile_data = PackedInt32Array(-524295, 1376257, 14, -393215, 1507329, 14, -327679, 1507329, 15, -393214, 1572865, 14, -327678, 1572865, 15, -786433, 1638401, 14, -720897, 1638401, 15, -851968, 1703937, 14, -786432, 1703937, 15, -851967, 1769473, 14, -786431, 1769473, 15, -65544, 1507329, 16, -524287, 1441793, 16, -720902, 1376257, 16, -851971, 1376257, 16, -983037, 2162689, 4, -196612, 2162689, 3, -131076, 2162689, 4, -65540, 2162689, 5, -4, 2162689, 6, -196611, 2228225, 3, -131075, 2228225, 4, -65539, 2228225, 5, -3, 2228225, 6, -786441, 2162689, 3, -720905, 2162689, 4, -655369, 2162689, 5, -589833, 2162689, 6, -786440, 2228225, 3, -720904, 2228225, 4, -655368, 2228225, 5, -589832, 2228225, 6, -1048573, 2162689, 3, -917501, 2162689, 5, -851965, 2162689, 6, -1048572, 2228225, 3, -983036, 2228225, 4, -917500, 2228225, 5, -851964, 2228225, 6, -983050, 1900545, 6, -983049, 1376257, 6, -983048, 1835009, 6, -917514, 65537, 7, -917513, 131073, 7, -917512, 196609, 7, -393222, 2097153, 5, -327686, 2097153, 6, -589821, 2031617, 5, -524285, 2031617, 6, -1048578, 2228225, 19, -983042, 2228225, 20, -1048577, 2293761, 19, -983041, 2293761, 20)
 
-[node name="Area2D" parent="." instance=ExtResource("2_00w2d")]
-position = Vector2(-74, 64)
-
-[node name="Area2D2" parent="." instance=ExtResource("2_00w2d")]
-position = Vector2(66, 29)
-
-[node name="Area2D3" parent="." instance=ExtResource("2_00w2d")]
-position = Vector2(-66, -43)
-
 [node name="FinishDoor" parent="." instance=ExtResource("3_4uyun")]
 position = Vector2(24, -146)
 scale = Vector2(1.19869, 0.64876)
+collision_mask = 4
 
-[node name="PlayerMouse" parent="." instance=ExtResource("4_5xcup")]
-position = Vector2(59, 121)
+[node name="Obstacles" type="Node2D" parent="."]
+y_sort_enabled = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(13, -16)
 zoom = Vector2(0.59, 0.59)
+
+[node name="Elements" type="Node2D" parent="."]
+y_sort_enabled = true
+
+[node name="Area2D" parent="Elements" instance=ExtResource("2_00w2d")]
+position = Vector2(-16, -43)
+collision_layer = 3
+
+[node name="Area2D2" parent="Elements" instance=ExtResource("2_00w2d")]
+position = Vector2(35, -43)
+
+[node name="Area2D3" parent="Elements" instance=ExtResource("2_00w2d")]
+position = Vector2(-66, -43)
+
+[node name="Soldat" type="Node2D" parent="Elements"]
+
+[node name="enemieLudoStyle" parent="Elements/Soldat" instance=ExtResource("5_u2i1w")]
+position = Vector2(-145, 69)
+max_balle = 5
+
+[node name="enemieLudoStyle2" parent="Elements/Soldat" instance=ExtResource("5_u2i1w")]
+position = Vector2(-145, 9)
+
+[node name="enemieLudoStyle3" parent="Elements/Soldat" instance=ExtResource("5_u2i1w")]
+position = Vector2(-145, -63)
+
+[node name="enemieLudoStyle4" parent="Elements/Soldat" instance=ExtResource("5_u2i1w")]
+position = Vector2(-146, -99)
+
+[node name="Robot" type="Node2D" parent="Elements"]
+
+[node name="Robot_troop" parent="Elements/Robot" instance=ExtResource("6_m2wjj")]
+position = Vector2(152, 46)
+
+[node name="Robot_troop2" parent="Elements/Robot" instance=ExtResource("6_m2wjj")]
+position = Vector2(153, -17)
+
+[node name="PlayerMouse" parent="Elements" instance=ExtResource("4_5xcup")]
+y_sort_enabled = true
+position = Vector2(85, 123)
+friction = 2500.0
+
+[node name="Temporary_background" type="Sprite2D" parent="."]
+position = Vector2(-254, -12)
+scale = Vector2(-0.672869, -330.845)
+texture = SubResource("GradientTexture1D_5s3lk")
+
+[node name="Temporary_background2" type="Sprite2D" parent="."]
+position = Vector2(253, -16)
+scale = Vector2(0.66297, -334.727)
+texture = SubResource("GradientTexture1D_5s3lk")
+
+[connection signal="body_entered" from="FinishDoor" to="." method="_on_level_finished"]
+[connection signal="player_touched" from="Elements/Area2D" to="." method="_on_player_touched"]
+[connection signal="player_touched" from="Elements/Area2D2" to="." method="_on_player_touched"]
+[connection signal="player_touched" from="Elements/Area2D3" to="." method="_on_player_touched"]
+[connection signal="player_laser_robot" from="Elements/Soldat/enemieLudoStyle" to="." method="_on_enemie_laser"]
+[connection signal="player_laser_robot" from="Elements/Soldat/enemieLudoStyle2" to="." method="_on_enemie_laser"]
+[connection signal="player_laser_robot" from="Elements/Soldat/enemieLudoStyle3" to="." method="_on_enemie_laser"]
+[connection signal="player_laser_robot" from="Elements/Soldat/enemieLudoStyle4" to="." method="_on_enemie_laser"]
+[connection signal="player_laser_robot" from="Elements/Robot/Robot_troop" to="." method="_on_enemie_robot_laser"]
+[connection signal="player_laser_robot" from="Elements/Robot/Robot_troop2" to="." method="_on_enemie_robot_laser"]
