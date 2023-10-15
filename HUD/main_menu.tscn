@@ -11,6 +11,13 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_7t3pg")
 
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(8.13399, 4.71112)
+color = Color(0, 0, 0.0784314, 1)
+
 [node name="Label" type="Label" parent="."]
 layout_mode = 0
 offset_left = -1.0
