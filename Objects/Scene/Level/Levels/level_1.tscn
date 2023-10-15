@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://duvbuedwgmnov"]
+[gd_scene load_steps=14 format=3 uid="uid://duvbuedwgmnov"]
 
 [ext_resource type="Script" path="res://Objects/Scene/Level/Levels/level_1.gd" id="1_1fy76"]
 [ext_resource type="TileSet" uid="uid://b4np3bj8hmygb" path="res://Objects/Scene/Level/game_tile_set.tres" id="2_86grb"]
@@ -6,7 +6,11 @@
 [ext_resource type="PackedScene" uid="uid://d0um0hx5pa1od" path="res://Objects/Scene/Level/finish_door.tscn" id="4_iylhd"]
 [ext_resource type="PackedScene" uid="uid://3nm7garna6nc" path="res://Enemie/enemie.tscn" id="5_d3f0a"]
 [ext_resource type="Texture2D" uid="uid://b7p1lqlgneikt" path="res://Sprites/Ennemi/Lazer_Charge_anim1.png" id="6_d13t6"]
+[ext_resource type="PackedScene" uid="uid://pv7u8ay2uot3" path="res://Objects/Scene/Level/Obstacle/small_box.tscn" id="6_d116a"]
 [ext_resource type="PackedScene" uid="uid://djv7h78y5oiql" path="res://Characters/player_mouse.tscn" id="7_6xfi8"]
+[ext_resource type="PackedScene" uid="uid://bpch8vigv37va" path="res://Objects/Scene/Level/Obstacle/box.tscn" id="8_lf6h3"]
+[ext_resource type="PackedScene" uid="uid://cggeqjfouvmpy" path="res://Objects/Scene/Level/Obstacle/wall_horizontal.tscn" id="10_iyxh0"]
+[ext_resource type="PackedScene" uid="uid://mfu61hyy2kri" path="res://Objects/Scene/Level/Obstacle/wall_vertical.tscn" id="11_rd3l3"]
 
 [sub_resource type="Gradient" id="Gradient_g2yms"]
 offsets = PackedFloat32Array(0.989011, 0.992674, 1)
@@ -52,6 +56,7 @@ position = Vector2(13, -16)
 zoom = Vector2(0.59, 0.59)
 
 [node name="Elements" type="Node2D" parent="."]
+z_as_relative = false
 y_sort_enabled = true
 
 [node name="Area2D" parent="Elements" instance=ExtResource("2_pijqx")]
@@ -62,7 +67,31 @@ collision_layer = 3
 position = Vector2(35, -43)
 
 [node name="Area2D3" parent="Elements" instance=ExtResource("2_pijqx")]
-position = Vector2(-66, -43)
+position = Vector2(-51, -10)
+
+[node name="Obstacles" type="Node2D" parent="Elements"]
+y_sort_enabled = true
+
+[node name="Wall_horizontal" parent="Elements/Obstacles" instance=ExtResource("10_iyxh0")]
+position = Vector2(26, -111)
+
+[node name="Wall_vertical" parent="Elements/Obstacles" instance=ExtResource("11_rd3l3")]
+position = Vector2(-83, 9)
+
+[node name="Box2" parent="Elements/Obstacles" instance=ExtResource("8_lf6h3")]
+position = Vector2(66, -7)
+
+[node name="Box3" parent="Elements/Obstacles" instance=ExtResource("8_lf6h3")]
+position = Vector2(26, 78)
+
+[node name="Small_Box" parent="Elements/Obstacles" instance=ExtResource("6_d116a")]
+position = Vector2(-98, 57)
+
+[node name="Small_Box2" parent="Elements/Obstacles" instance=ExtResource("6_d116a")]
+position = Vector2(94, 56)
+
+[node name="Box" parent="Elements/Obstacles" instance=ExtResource("8_lf6h3")]
+position = Vector2(-30, 46)
 
 [node name="Soldat" type="Node2D" parent="Elements"]
 
@@ -107,6 +136,7 @@ position = Vector2(85, 123)
 friction = 2500.0
 
 [node name="Bullets" type="Node2D" parent="Elements"]
+y_sort_enabled = true
 
 [node name="Temporary_background" type="Sprite2D" parent="."]
 position = Vector2(475, -30)

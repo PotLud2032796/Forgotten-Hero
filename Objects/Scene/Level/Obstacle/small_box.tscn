@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://pv7u8ay2uot3"]
+
+[ext_resource type="Texture2D" uid="uid://b3lk5dcomcdtl" path="res://Art/Obstacles/Small_box.png" id="1_ofrlb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tyw2m"]
+size = Vector2(14, 10)
+
+[node name="Small_Box" type="StaticBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_tyw2m")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_ofrlb")
+offset = Vector2(0, -2)
