@@ -18,4 +18,4 @@ func _on_player_touched():
 func _on_enemie_laser(pos):
 	var laser = laser_scene.instantiate()
 	laser.position = pos
-	add_child(laser)
+	$Elements/Bullets.add_child(laser)
