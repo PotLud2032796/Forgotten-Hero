@@ -110,7 +110,7 @@ y_sort_enabled = true
 position = Vector2(85, 123)
 friction = 2500.0
 
-[connection signal="body_entered" from="FinishDoor" to="." method="_on_finish_door_body_entered"]
+[connection signal="body_entered" from="FinishDoor" to="." method="_on_level_finished"]
 [connection signal="player_touched" from="Elements/Area2D" to="." method="_on_player_touched"]
 [connection signal="player_touched" from="Elements/Area2D2" to="." method="_on_player_touched"]
 [connection signal="player_touched" from="Elements/Area2D3" to="." method="_on_player_touched"]
