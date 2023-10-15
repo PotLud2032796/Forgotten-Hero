@@ -337,6 +337,8 @@ states/run/position = Vector2(433, 101)
 transitions = ["idle", "run", SubResource("AnimationNodeStateMachineTransition_emvig"), "run", "idle", SubResource("AnimationNodeStateMachineTransition_a5864"), "Start", "idle", SubResource("AnimationNodeStateMachineTransition_jtxr7"), "run", "dash", SubResource("AnimationNodeStateMachineTransition_lh5ij"), "dash", "run", SubResource("AnimationNodeStateMachineTransition_1kfl4")]
 
 [node name="PlayerMouse" type="CharacterBody2D"]
+collision_layer = 16
+collision_mask = 6
 script = ExtResource("1_j1q5l")
 max_speed = 90.0
 dash_speed = 200.0

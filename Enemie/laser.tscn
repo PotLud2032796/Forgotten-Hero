@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://cscqwc1cfsw7i"]
+
+[ext_resource type="Script" path="res://Enemie/laser.gd" id="1_631l0"]
+[ext_resource type="Texture2D" uid="uid://8y1m0il1ykl6" path="res://Art/homme/Human_bullet_small.png" id="2_v4fgm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_se3c3"]
+size = Vector2(12, 12)
+
+[node name="Laser" type="Area2D"]
+collision_layer = 8
+collision_mask = 16
+script = ExtResource("1_631l0")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_v4fgm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_se3c3")

@@ -45,6 +45,19 @@ func player_movement(delta):
 	if Input.is_action_just_pressed("dash") and can_dash:
 		dash()
 
+<<<<<<< HEAD
+=======
+func _physics_process(_delta):
+	var input_direction = Vector2(
+		Input.get_action_strength("right") - Input.get_action_strength("left"),
+		Input.get_action_strength("down") - Input.get_action_strength("up")
+	)
+	
+	#print(input_direction)
+	
+	velocity = input_direction * move_speed
+	
+>>>>>>> 0f91e46 (IACree)
 	move_and_slide()
 
 func dash():

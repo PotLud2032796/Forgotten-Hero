@@ -1,0 +1,36 @@
+[gd_scene load_steps=4 format=3 uid="uid://3nm7garna6nc"]
+
+[ext_resource type="Script" path="res://Enemie/enemie.gd" id="1_08jdn"]
+[ext_resource type="Texture2D" uid="uid://0qjr7085k7t0" path="res://Art/homme/Soldier_gun_01.png" id="2_l40le"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w5uw8"]
+size = Vector2(38.9414, 31.7578)
+
+[node name="enemieLudoStyle" type="CharacterBody2D"]
+script = ExtResource("1_08jdn")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+texture = ExtResource("2_l40le")
+hframes = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-5.4707, 0)
+shape = SubResource("RectangleShape2D_w5uw8")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.5
+
+[node name="LaserPos" type="Node2D" parent="."]
+
+[node name="Marker2D1" type="Marker2D" parent="LaserPos"]
+position = Vector2(14, 0)
+
+[node name="Burst" type="Timer" parent="."]
+wait_time = 3.0
+
+[node name="TempoBurst" type="Timer" parent="."]
+wait_time = 5.0
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="Burst" to="." method="_on_burst_timeout"]
+[connection signal="timeout" from="TempoBurst" to="." method="_on_tempo_burst_timeout"]
