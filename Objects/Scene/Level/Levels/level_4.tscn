@@ -1,26 +1,31 @@
-[gd_scene load_steps=7 format=3 uid="uid://ch330y2q0f21i"]
+[gd_scene load_steps=15 format=3 uid="uid://fvjqd2bmcgl6"]
 
-[ext_resource type="TileSet" uid="uid://b4np3bj8hmygb" path="res://Objects/Scene/Level/game_tile_set.tres" id="1_hjg83"]
-[ext_resource type="PackedScene" uid="uid://s0uq4eufsj28" path="res://Objects/Scene/Level/Obstacle/barbwire.tscn" id="2_00w2d"]
-[ext_resource type="PackedScene" uid="uid://d0um0hx5pa1od" path="res://Objects/Scene/Level/finish_door.tscn" id="3_4uyun"]
-[ext_resource type="PackedScene" uid="uid://djv7h78y5oiql" path="res://Characters/player_mouse.tscn" id="4_5xcup"]
+[ext_resource type="Script" path="res://Objects/Scene/Level/Levels/level_4.gd" id="1_254ux"]
+[ext_resource type="TileSet" uid="uid://b4np3bj8hmygb" path="res://Objects/Scene/Level/game_tile_set.tres" id="2_b7kkg"]
+[ext_resource type="PackedScene" uid="uid://d0um0hx5pa1od" path="res://Objects/Scene/Level/finish_door.tscn" id="3_a8w1g"]
+[ext_resource type="PackedScene" uid="uid://s0uq4eufsj28" path="res://Objects/Scene/Level/Obstacle/barbwire.tscn" id="4_obnb2"]
+[ext_resource type="PackedScene" uid="uid://3nm7garna6nc" path="res://Enemie/enemie.tscn" id="5_7qhq5"]
+[ext_resource type="PackedScene" uid="uid://bg70n4t3nval1" path="res://Enemie/homme/enemie_homme_big_man.tscn" id="6_q4ue7"]
+[ext_resource type="PackedScene" uid="uid://dsyy0uj1jef5y" path="res://Enemie/robot/enemie_robot_big_roboto.tscn" id="7_gs3a5"]
+[ext_resource type="PackedScene" uid="uid://x76oa8uko4s4" path="res://Enemie/robot/ennemi_robot_troop.tscn" id="8_la71p"]
+[ext_resource type="PackedScene" uid="uid://djv7h78y5oiql" path="res://Characters/player_mouse.tscn" id="9_c1eo4"]
+[ext_resource type="PackedScene" uid="uid://mfu61hyy2kri" path="res://Objects/Scene/Level/Obstacle/wall_vertical.tscn" id="10_uehos"]
+[ext_resource type="PackedScene" uid="uid://cggeqjfouvmpy" path="res://Objects/Scene/Level/Obstacle/wall_horizontal.tscn" id="11_hgk12"]
+[ext_resource type="PackedScene" uid="uid://bpch8vigv37va" path="res://Objects/Scene/Level/Obstacle/box.tscn" id="12_sf018"]
 
-[sub_resource type="Gradient" id="Gradient_ekhhw"]
+[sub_resource type="Gradient" id="Gradient_g2yms"]
 offsets = PackedFloat32Array(0.989011, 0.992674, 1)
 colors = PackedColorArray(0, 0, 0, 1, 0.216117, 0.216117, 0.216117, 1, 1, 1, 1, 1)
 
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_juc8h"]
-gradient = SubResource("Gradient_ekhhw")
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_5s3lk"]
+gradient = SubResource("Gradient_g2yms")
 
-[node name="level_2" type="Node2D"]
-
-[node name="Temporary_background" type="Sprite2D" parent="."]
-scale = Vector2(600, 380)
-texture = SubResource("GradientTexture1D_juc8h")
+[node name="Level_4" type="Node2D"]
+script = ExtResource("1_254ux")
 
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2(40, 106)
-tile_set = ExtResource("1_hjg83")
+tile_set = ExtResource("2_b7kkg")
 format = 2
 layer_0/name = "Tranche"
 layer_0/tile_data = PackedInt32Array(-1048584, 1376257, 4, -1048583, 1376257, 4, -1114111, 1376257, 4, -1114110, 1376257, 4, -1048582, 1376257, 4, -1048581, 1376257, 4, -1048580, 1376257, 4, -1048579, 1376257, 4, -1048578, 2228225, 19, -1048577, 2293761, 19, -1114112, 1376257, 4, -983053, 1376257, 5, -917517, 524289, 5, -65549, 524289, 6, -13, 524289, 6, 65523, 524289, 7, 131059, 327681, 1, 196595, 1376257, 1, -983052, 1376257, 5, -917516, 589825, 5, -65548, 589825, 6, -12, 589825, 6, 65524, 589825, 7, 131060, 327681, 1, 196596, 1376257, 1, -983051, 1376257, 5, 196597, 1376257, 1, -983050, 1376257, 5, 196598, 1376257, 1, -1048572, 1376257, 5, 131076, 1376257, 1, -1048571, 1376257, 5, 131077, 1376257, 1, -1048570, 1376257, 5, -983034, 458753, 5, -917498, 458753, 5, -851962, 458753, 5, -786426, 458753, 6, -720890, 458753, 6, -655354, 458753, 6, -589818, 458753, 6, -524282, 458753, 6, -458746, 458753, 6, -393210, 458753, 6, -327674, 458753, 6, -262138, 458753, 6, -196602, 458753, 6, -131066, 458753, 6, -65530, 458753, 6, 6, 458753, 7, 65542, 327681, 1, 131078, 1376257, 1, -1048569, 1376257, 5, -983033, 524289, 5, -917497, 524289, 5, -851961, 524289, 5, -786425, 524289, 6, -720889, 524289, 6, -655353, 524289, 6, -589817, 524289, 6, -524281, 524289, 6, -458745, 524289, 6, -393209, 524289, 6, -327673, 524289, 6, -262137, 524289, 6, -196601, 524289, 6, -131065, 524289, 6, -65529, 524289, 6, 7, 524289, 7, 65543, 327681, 1, 131079, 1376257, 1, -1114125, 1376257, 4, -1048589, 1376257, 4, -1114124, 1376257, 4, -1048588, 1376257, 4, -1114123, 1376257, 4, -1048587, 1376257, 4, -1114122, 1376257, 4, -1048586, 1376257, 4, -1114121, 1376257, 4, -1048585, 1376257, 4, -1114120, 1376257, 4, -1114119, 1376257, 4, -1114118, 1376257, 4, -1114117, 1376257, 4, -1114116, 1376257, 4, -1114115, 1376257, 4, -1114114, 1376257, 4, -1114113, 1376257, 4, -1179648, 1376257, 4, -1179647, 1376257, 4, -1179646, 1376257, 4, -1179645, 1376257, 4, -1114109, 1376257, 4, -1179644, 1376257, 4, -1114108, 1376257, 4, -1179643, 1376257, 4, -1114107, 1376257, 4, -1179642, 1376257, 4, -1114106, 1376257, 4, -1179641, 1376257, 4, -1114105, 1376257, 4, -983049, 1376257, 5, -983048, 1376257, 5, -983047, 1376257, 5, -983046, 1376257, 5, -983045, 1376257, 5, -983044, 1376257, 5, -983043, 1376257, 5, -983042, 2228225, 20, -983041, 2293761, 20, -1048576, 1376257, 5, -1048575, 1376257, 5, -1048574, 1376257, 5, -1048573, 1376257, 5, 196599, 1376257, 1, 196600, 1376257, 1, 196601, 1376257, 1, 196602, 1376257, 1, 196603, 1376257, 1, 196604, 1376257, 1, 196605, 1376257, 1, 196606, 1376257, 1, 196607, 1376257, 1, 131072, 1376257, 1, 131073, 1376257, 1, 131074, 1376257, 1, 131075, 1376257, 1, -851981, 524289, 5, -786445, 524289, 5, -720909, 524289, 6, -655373, 524289, 6, -589837, 524289, 6, -524301, 524289, 6, -458765, 524289, 6, -393229, 524289, 6, -327693, 524289, 6, -262157, 524289, 6, -196621, 524289, 6, -131085, 524289, 6, -851980, 589825, 5, -786444, 589825, 5, -720908, 589825, 6, -655372, 589825, 6, -589836, 589825, 6, -524300, 589825, 6, -458764, 589825, 6, -393228, 589825, 6, -327692, 589825, 6, -262156, 589825, 6, -196620, 589825, 6, -131084, 589825, 6)
@@ -37,27 +42,134 @@ layer_2/modulate = Color(1, 1, 1, 1)
 layer_2/y_sort_enabled = false
 layer_2/y_sort_origin = 0
 layer_2/z_index = 0
-layer_2/tile_data = PackedInt32Array(-524295, 1376257, 14, -393215, 1507329, 14, -327679, 1507329, 15, -393214, 1572865, 14, -327678, 1572865, 15, -786433, 1638401, 14, -720897, 1638401, 15, -851968, 1703937, 14, -786432, 1703937, 15, -851967, 1769473, 14, -786431, 1769473, 15, -65544, 1507329, 16, -524287, 1441793, 16, -720902, 1376257, 16, -851971, 1376257, 16, -983037, 2162689, 4, -196612, 2162689, 3, -131076, 2162689, 4, -65540, 2162689, 5, -4, 2162689, 6, -196611, 2228225, 3, -131075, 2228225, 4, -65539, 2228225, 5, -3, 2228225, 6, -786441, 2162689, 3, -720905, 2162689, 4, -655369, 2162689, 5, -589833, 2162689, 6, -786440, 2228225, 3, -720904, 2228225, 4, -655368, 2228225, 5, -589832, 2228225, 6, -1048573, 2162689, 3, -917501, 2162689, 5, -851965, 2162689, 6, -1048572, 2228225, 3, -983036, 2228225, 4, -917500, 2228225, 5, -851964, 2228225, 6, -983050, 1900545, 6, -983049, 1376257, 6, -983048, 1835009, 6, -917514, 65537, 7, -917513, 131073, 7, -917512, 196609, 7, -393222, 2097153, 5, -327686, 2097153, 6, -589821, 2031617, 5, -524285, 2031617, 6, -1048578, 2228225, 19, -983042, 2228225, 20, -1048577, 2293761, 19, -983041, 2293761, 20)
+layer_2/tile_data = PackedInt32Array(-65544, 1507329, 16, -720902, 1376257, 16, -851971, 1376257, 16, -983050, 1900545, 6, -983049, 1376257, 6, -983048, 1835009, 6, -917514, 65537, 7, -917513, 131073, 7, -917512, 196609, 7, -1048578, 2228225, 19, -983042, 2228225, 20, -1048577, 2293761, 19, -983041, 2293761, 20, -131082, 2162689, 3, -65546, 2162689, 4, -10, 2162689, 5, 65526, 2162689, 6, -131081, 2228225, 3, -65545, 2228225, 4, -9, 2228225, 5, 65527, 2228225, 6, -7, 2097153, 5, 65529, 2097153, 6, -196605, 2162689, 3, -131069, 2162689, 4, -65533, 2162689, 5, 3, 2162689, 6, -196604, 2228225, 3, -131068, 2228225, 4, -65532, 2228225, 5, 4, 2228225, 6, -327691, 1376257, 14, -1048573, 2162689, 3, -983037, 2162689, 4, -917501, 2162689, 5, -851965, 2162689, 6, -1048572, 2228225, 3, -983036, 2228225, 4, -917500, 2228225, 5, -851964, 2228225, 6, -524292, 1638401, 14, -524291, 1703937, 14, -524290, 1769473, 14, -458756, 1638401, 15, -458755, 1703937, 15, -458754, 1769473, 15)
 
-[node name="Area2D" parent="." instance=ExtResource("2_00w2d")]
-position = Vector2(-74, 64)
-
-[node name="Area2D2" parent="." instance=ExtResource("2_00w2d")]
-position = Vector2(66, 29)
-
-[node name="Area2D2" parent="Area2D2" instance=ExtResource("2_00w2d")]
-position = Vector2(66, 29)
-
-[node name="Area2D3" parent="." instance=ExtResource("2_00w2d")]
-position = Vector2(-66, -43)
-
-[node name="FinishDoor" parent="." instance=ExtResource("3_4uyun")]
+[node name="FinishDoor" parent="." instance=ExtResource("3_a8w1g")]
 position = Vector2(24, -146)
 scale = Vector2(1.19869, 0.64876)
+collision_mask = 4
 
-[node name="PlayerMouse" parent="." instance=ExtResource("4_5xcup")]
-position = Vector2(59, 121)
+[node name="Obstacles" type="Node2D" parent="."]
+y_sort_enabled = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(13, -16)
 zoom = Vector2(0.59, 0.59)
+
+[node name="Elements" type="Node2D" parent="."]
+y_sort_enabled = true
+
+[node name="Area2D" parent="Elements" instance=ExtResource("4_obnb2")]
+position = Vector2(-24, 74)
+collision_layer = 3
+
+[node name="Area2D2" parent="Elements" instance=ExtResource("4_obnb2")]
+position = Vector2(23, 74)
+
+[node name="Area2D3" parent="Elements" instance=ExtResource("4_obnb2")]
+position = Vector2(-71, 74)
+
+[node name="Soldat" type="Node2D" parent="Elements"]
+
+[node name="enemieLudoStyle" parent="Elements/Soldat" instance=ExtResource("5_7qhq5")]
+position = Vector2(-145, 95)
+max_balle = 2
+
+[node name="enemieLudoStyle4" parent="Elements/Soldat" instance=ExtResource("5_7qhq5")]
+position = Vector2(-146, -99)
+max_balle = 2
+
+[node name="enemieHommeBigMan" parent="Elements/Soldat" instance=ExtResource("6_q4ue7")]
+position = Vector2(-148, 14)
+
+[node name="enemie_robot_big_roboto" parent="Elements/Soldat" instance=ExtResource("7_gs3a5")]
+position = Vector2(144, -80)
+
+[node name="Robot" type="Node2D" parent="Elements"]
+
+[node name="Robot_troop" parent="Elements/Robot" instance=ExtResource("8_la71p")]
+position = Vector2(155, 56)
+
+[node name="Robot_troop2" parent="Elements/Robot" instance=ExtResource("8_la71p")]
+position = Vector2(154, -24)
+
+[node name="PlayerMouse" parent="Elements" instance=ExtResource("9_c1eo4")]
+y_sort_enabled = true
+position = Vector2(85, 123)
+friction = 2500.0
+
+[node name="StaticBody2D" parent="Elements" instance=ExtResource("4_obnb2")]
+position = Vector2(109, 41)
+
+[node name="StaticBody2D3" parent="Elements" instance=ExtResource("4_obnb2")]
+position = Vector2(70, 74)
+
+[node name="StaticBody2D4" parent="Elements" instance=ExtResource("4_obnb2")]
+position = Vector2(-108, 42)
+
+[node name="StaticBody2D5" parent="Elements" instance=ExtResource("4_obnb2")]
+position = Vector2(-33, -2)
+
+[node name="StaticBody2D6" parent="Elements" instance=ExtResource("4_obnb2")]
+position = Vector2(-104, -1)
+
+[node name="StaticBody2D7" parent="Elements" instance=ExtResource("4_obnb2")]
+position = Vector2(107, -3)
+
+[node name="StaticBody2D8" parent="Elements" instance=ExtResource("4_obnb2")]
+position = Vector2(34, -2)
+
+[node name="StaticBody2D9" parent="Elements" instance=ExtResource("4_obnb2")]
+position = Vector2(107, -49)
+
+[node name="StaticBody2D10" parent="Elements" instance=ExtResource("4_obnb2")]
+position = Vector2(57, -49)
+
+[node name="StaticBody2D11" parent="Elements" instance=ExtResource("4_obnb2")]
+position = Vector2(8, -49)
+
+[node name="StaticBody2D12" parent="Elements" instance=ExtResource("4_obnb2")]
+position = Vector2(-43, -49)
+
+[node name="Wall_vertical" parent="Elements" instance=ExtResource("10_uehos")]
+position = Vector2(18, 19)
+
+[node name="StaticBody2D15" parent="Elements" instance=ExtResource("4_obnb2")]
+position = Vector2(0, 42)
+
+[node name="Wall_horizontal" parent="Elements" instance=ExtResource("11_hgk12")]
+position = Vector2(-109, -72)
+
+[node name="Wall_horizontal2" parent="Elements" instance=ExtResource("11_hgk12")]
+position = Vector2(-65, -83)
+
+[node name="Wall_horizontal3" parent="Elements" instance=ExtResource("11_hgk12")]
+position = Vector2(-22, -93)
+
+[node name="Box" parent="Elements" instance=ExtResource("12_sf018")]
+position = Vector2(104, -119)
+
+[node name="Box2" parent="Elements" instance=ExtResource("12_sf018")]
+position = Vector2(117, 20)
+
+[node name="StaticBody2D16" parent="Elements" instance=ExtResource("4_obnb2")]
+position = Vector2(64, -96)
+
+[node name="Temporary_background" type="Sprite2D" parent="."]
+position = Vector2(-254, -12)
+scale = Vector2(-0.672869, -330.845)
+texture = SubResource("GradientTexture1D_5s3lk")
+
+[node name="Temporary_background2" type="Sprite2D" parent="."]
+position = Vector2(253, -16)
+scale = Vector2(0.66297, -334.727)
+texture = SubResource("GradientTexture1D_5s3lk")
+
+[connection signal="body_entered" from="FinishDoor" to="." method="_on_level_finished"]
+[connection signal="player_touched" from="Elements/Area2D" to="." method="_on_player_touched"]
+[connection signal="player_touched" from="Elements/Area2D2" to="." method="_on_player_touched"]
+[connection signal="player_touched" from="Elements/Area2D3" to="." method="_on_player_touched"]
+[connection signal="player_laser_robot" from="Elements/Soldat/enemieLudoStyle" to="." method="_on_enemie_laser"]
+[connection signal="player_laser_robot" from="Elements/Soldat/enemieLudoStyle4" to="." method="_on_enemie_laser"]
+[connection signal="player_laser_robot" from="Elements/Robot/Robot_troop" to="." method="_on_enemie_robot_laser"]
+[connection signal="player_laser_robot" from="Elements/Robot/Robot_troop2" to="." method="_on_enemie_robot_laser"]

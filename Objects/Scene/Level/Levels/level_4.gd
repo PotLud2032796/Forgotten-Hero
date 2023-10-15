@@ -20,5 +20,4 @@ func _on_enemie_robot_laser(pos):
 	
 
 func _on_level_finished(_body):
-	Transition.change_scene("res://Objects/Scene/Level/Levels/level_2.tscn")
-
+	Transition.change_scene("res://HUD/game_won.tscn")
