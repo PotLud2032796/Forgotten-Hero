@@ -3,7 +3,7 @@
 [ext_resource type="TileSet" uid="uid://b4np3bj8hmygb" path="res://Objects/Scene/Level/game_tile_set.tres" id="1_hjg83"]
 [ext_resource type="Script" path="res://Objects/Scene/Level/Levels/level_2.gd" id="1_oin6k"]
 [ext_resource type="PackedScene" uid="uid://s0uq4eufsj28" path="res://Objects/Scene/Level/Obstacle/barbwire.tscn" id="2_00w2d"]
-[ext_resource type="PackedScene" uid="uid://d0um0hx5pa1od" path="res://Objects/Scene/Level/finish_door.tscn" id="3_4uyun"]
+[ext_resource type="PackedScene" path="res://Objects/Scene/Level/finish_door.tscn" id="3_4uyun"]
 [ext_resource type="PackedScene" uid="uid://djv7h78y5oiql" path="res://Characters/player_mouse.tscn" id="4_5xcup"]
 [ext_resource type="PackedScene" path="res://Enemie/homme/enemieHommeLittleSoldier.tscn" id="4_tt6df"]
 [ext_resource type="PackedScene" path="res://Enemie/robot/enemie_robot_big_roboto.tscn" id="5_h2sbw"]
