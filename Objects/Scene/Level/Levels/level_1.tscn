@@ -83,11 +83,9 @@ position = Vector2(-146, -99)
 
 [node name="Robot_troop" parent="Elements/Robot" instance=ExtResource("6_0lwkf")]
 position = Vector2(152, 46)
-max_balle = 0
 
 [node name="Robot_troop2" parent="Elements/Robot" instance=ExtResource("6_0lwkf")]
 position = Vector2(153, -17)
-max_balle = 0
 
 [node name="PlayerMouse" parent="Elements" instance=ExtResource("7_6xfi8")]
 y_sort_enabled = true

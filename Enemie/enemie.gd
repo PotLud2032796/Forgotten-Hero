@@ -26,6 +26,7 @@ func _process(_delta):
 		$Timer.start()
 		if conteur == max_balle:
 			animation_player.stop()
+			$Burst.start()
 			animation_player.play("RESET")
 			$Burst.start()
 			conteur = 0
