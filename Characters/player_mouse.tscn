@@ -333,7 +333,11 @@ states/run/node = SubResource("AnimationNodeBlendSpace2D_f8un6")
 states/run/position = Vector2(433, 101)
 transitions = ["idle", "run", SubResource("AnimationNodeStateMachineTransition_emvig"), "run", "idle", SubResource("AnimationNodeStateMachineTransition_a5864"), "Start", "idle", SubResource("AnimationNodeStateMachineTransition_jtxr7"), "run", "dash", SubResource("AnimationNodeStateMachineTransition_lh5ij"), "dash", "run", SubResource("AnimationNodeStateMachineTransition_1kfl4")]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_sryhw"]
+radius = 7.0
+
 [node name="PlayerMouse" type="CharacterBody2D"]
+collision_layer = 4
 script = ExtResource("1_j1q5l")
 max_speed = 90.0
 dash_speed = 200.0
@@ -365,6 +369,13 @@ parameters/run/blend_position = Vector2(0.00113511, 0.0264605)
 
 [node name="DashAnimationTimer" type="Timer" parent="."]
 wait_time = 0.7
+
+[node name="HurtBox" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
+shape = SubResource("CircleShape2D_sryhw")
 
 [connection signal="timeout" from="DashTimer" to="." method="_on_dash_timer_timeout"]
 [connection signal="timeout" from="DashAnimationTimer" to="." method="_on_dash_animation_timer_timeout"]

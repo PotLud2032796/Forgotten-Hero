@@ -4,7 +4,7 @@
 [ext_resource type="TileSet" uid="uid://b4np3bj8hmygb" path="res://Objects/Scene/Level/game_tile_set.tres" id="2_86grb"]
 [ext_resource type="PackedScene" uid="uid://s0uq4eufsj28" path="res://Objects/Scene/Level/Obstacle/barbwire.tscn" id="2_pijqx"]
 [ext_resource type="PackedScene" uid="uid://d0um0hx5pa1od" path="res://Objects/Scene/Level/finish_door.tscn" id="4_iylhd"]
-[ext_resource type="PackedScene" path="res://Enemie/enemie.tscn" id="5_d3f0a"]
+[ext_resource type="PackedScene" uid="uid://3nm7garna6nc" path="res://Enemie/enemie.tscn" id="5_d3f0a"]
 [ext_resource type="Texture2D" uid="uid://b7p1lqlgneikt" path="res://Sprites/Ennemi/Lazer_Charge_anim1.png" id="6_d13t6"]
 [ext_resource type="PackedScene" uid="uid://djv7h78y5oiql" path="res://Characters/player_mouse.tscn" id="7_6xfi8"]
 
@@ -46,6 +46,7 @@ layer_2/tile_data = PackedInt32Array(-524295, 1376257, 14, -393215, 1507329, 14,
 [node name="FinishDoor" parent="." instance=ExtResource("4_iylhd")]
 position = Vector2(24, -146)
 scale = Vector2(1.19869, 0.64876)
+collision_mask = 4
 
 [node name="Obstacles" type="Node2D" parent="."]
 y_sort_enabled = true
@@ -59,6 +60,7 @@ y_sort_enabled = true
 
 [node name="Area2D" parent="Elements" instance=ExtResource("2_pijqx")]
 position = Vector2(-16, -43)
+collision_layer = 3
 
 [node name="Area2D2" parent="Elements" instance=ExtResource("2_pijqx")]
 position = Vector2(35, -43)

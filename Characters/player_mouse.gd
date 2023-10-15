@@ -7,6 +7,8 @@ extends CharacterBody2D
 @export var dash_speed : float = 400
 @export var dash_cooldown : float = 1
 @export var starting_direction : Vector2 = Vector2(0, 1)
+@onready var hurt_box = $HurtBox
+var isHurt: bool = false
 
 # parameters/idle/blend_position
 
@@ -24,6 +26,9 @@ func _ready():
 
 func _physics_process(delta):
 	player_movement(delta)
+	if !isHurt:
+		for area in hurt_box.get_overlapping_areas():
+			get_tree().change_scene_to_file("res://HUD/game_over.tscn")
 
 func get_input():
 	var input = Vector2.ZERO
@@ -45,19 +50,6 @@ func player_movement(delta):
 	if Input.is_action_just_pressed("dash") and can_dash:
 		dash()
 
-<<<<<<< HEAD
-=======
-func _physics_process(_delta):
-	var input_direction = Vector2(
-		Input.get_action_strength("right") - Input.get_action_strength("left"),
-		Input.get_action_strength("down") - Input.get_action_strength("up")
-	)
-	
-	#print(input_direction)
-	
-	velocity = input_direction * move_speed
-	
->>>>>>> 0f91e46 (IACree)
 	move_and_slide()
 
 func dash():
@@ -88,7 +80,6 @@ func pick_new_state():
 		state_machine.travel("run")
 	elif(is_dashing == false):
 		state_machine.travel("idle")
-
 
 func _on_dash_animation_timer_timeout():
 	is_dashing = false
