@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://nsqlcfqyd5sn" path="res://Art/Assets/Souris/Souris-sheet-ALL.png" id="2_v3wej"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wh3yj"]
-size = Vector2(14, 7)
+size = Vector2(10, 5)
 
 [sub_resource type="Animation" id="Animation_j28w0"]
 length = 0.001
@@ -337,13 +337,12 @@ states/run/position = Vector2(433, 101)
 transitions = ["idle", "run", SubResource("AnimationNodeStateMachineTransition_emvig"), "run", "idle", SubResource("AnimationNodeStateMachineTransition_a5864"), "Start", "idle", SubResource("AnimationNodeStateMachineTransition_jtxr7"), "run", "dash", SubResource("AnimationNodeStateMachineTransition_lh5ij"), "dash", "run", SubResource("AnimationNodeStateMachineTransition_1kfl4")]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_sryhw"]
-radius = 7.0
+radius = 3.0
 
 [node name="PlayerMouse" type="CharacterBody2D"]
 collision_layer = 4
 script = ExtResource("1_j1q5l")
-max_speed = 90.0
-dash_speed = 200.0
+dash_cooldown = 2.0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_v3wej")
@@ -351,7 +350,7 @@ hframes = 7
 vframes = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 11)
+position = Vector2(0, 9.5)
 shape = SubResource("RectangleShape2D_wh3yj")
 
 [node name="DashTimer" type="Timer" parent="."]
@@ -368,18 +367,19 @@ tree_root = SubResource("AnimationNodeStateMachine_lkqh1")
 anim_player = NodePath("../AnimationPlayer")
 active = true
 parameters/dash/blend_position = Vector2(0.0374575, 0.0240176)
-parameters/idle/blend_position = Vector2(0.0556186, 0.0912664)
+parameters/idle/blend_position = Vector2(-0.00113505, 0.369869)
 parameters/run/blend_position = Vector2(0.00113511, 0.0264605)
 
 [node name="DashAnimationTimer" type="Timer" parent="."]
-wait_time = 0.7
+wait_time = 0.5
+one_shot = true
 
 [node name="HurtBox" type="Area2D" parent="."]
 collision_layer = 4
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
-position = Vector2(0, 9)
+position = Vector2(0, 7)
 shape = SubResource("CircleShape2D_sryhw")
 
 [connection signal="timeout" from="DashTimer" to="." method="_on_dash_timer_timeout"]
