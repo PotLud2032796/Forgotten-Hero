@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://8y1m0il1ykl6" path="res://Art/homme/Human_bullet_small.png" id="2_v4fgm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_se3c3"]
-size = Vector2(12, 12)
+size = Vector2(13, 12)
 
 [node name="Laser" type="Area2D"]
 collision_layer = 2

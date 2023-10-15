@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://s0uq4eufsj28" path="res://Objects/Scene/Level/Obstacle/barbwire.tscn" id="2_pijqx"]
 [ext_resource type="PackedScene" uid="uid://d0um0hx5pa1od" path="res://Objects/Scene/Level/finish_door.tscn" id="4_iylhd"]
 [ext_resource type="PackedScene" uid="uid://3nm7garna6nc" path="res://Enemie/enemie.tscn" id="5_d3f0a"]
-[ext_resource type="Texture2D" uid="uid://b7p1lqlgneikt" path="res://Sprites/Ennemi/Lazer_Charge_anim1.png" id="6_d13t6"]
+[ext_resource type="PackedScene" uid="uid://x76oa8uko4s4" path="res://Enemie/robot/ennemi_robot_troop.tscn" id="6_0lwkf"]
 [ext_resource type="PackedScene" uid="uid://djv7h78y5oiql" path="res://Characters/player_mouse.tscn" id="7_6xfi8"]
 
 [sub_resource type="Gradient" id="Gradient_g2yms"]
@@ -17,10 +17,6 @@ gradient = SubResource("Gradient_g2yms")
 
 [node name="Level_1" type="Node2D"]
 script = ExtResource("1_1fy76")
-
-[node name="Temporary_background" type="Sprite2D" parent="."]
-scale = Vector2(600, 380)
-texture = SubResource("GradientTexture1D_5s3lk")
 
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2(40, 106)
@@ -85,36 +81,36 @@ position = Vector2(-146, -99)
 
 [node name="Robot" type="Node2D" parent="Elements"]
 
-[node name="LazerChargeAnim1" type="Sprite2D" parent="Elements/Robot"]
-position = Vector2(142, 74)
-scale = Vector2(0.322695, 0.322695)
-texture = ExtResource("6_d13t6")
+[node name="Robot_troop" parent="Elements/Robot" instance=ExtResource("6_0lwkf")]
+position = Vector2(152, 46)
+max_balle = 0
 
-[node name="LazerChargeAnim2" type="Sprite2D" parent="Elements/Robot"]
-position = Vector2(141, 7)
-scale = Vector2(0.322695, 0.322695)
-texture = ExtResource("6_d13t6")
-
-[node name="LazerChargeAnim3" type="Sprite2D" parent="Elements/Robot"]
-position = Vector2(141, -71)
-scale = Vector2(0.322695, 0.322695)
-texture = ExtResource("6_d13t6")
-
-[node name="LazerChargeAnim4" type="Sprite2D" parent="Elements/Robot"]
-position = Vector2(142, -33)
-scale = Vector2(0.322695, 0.322695)
-texture = ExtResource("6_d13t6")
+[node name="Robot_troop2" parent="Elements/Robot" instance=ExtResource("6_0lwkf")]
+position = Vector2(153, -17)
+max_balle = 0
 
 [node name="PlayerMouse" parent="Elements" instance=ExtResource("7_6xfi8")]
 y_sort_enabled = true
 position = Vector2(85, 123)
 friction = 2500.0
 
+[node name="Temporary_background" type="Sprite2D" parent="."]
+position = Vector2(-254, -12)
+scale = Vector2(-0.672869, -330.845)
+texture = SubResource("GradientTexture1D_5s3lk")
+
+[node name="Temporary_background2" type="Sprite2D" parent="."]
+position = Vector2(253, -16)
+scale = Vector2(0.66297, -334.727)
+texture = SubResource("GradientTexture1D_5s3lk")
+
 [connection signal="body_entered" from="FinishDoor" to="." method="_on_level_finished"]
 [connection signal="player_touched" from="Elements/Area2D" to="." method="_on_player_touched"]
 [connection signal="player_touched" from="Elements/Area2D2" to="." method="_on_player_touched"]
 [connection signal="player_touched" from="Elements/Area2D3" to="." method="_on_player_touched"]
-[connection signal="player_laser" from="Elements/Soldat/enemieLudoStyle" to="." method="_on_enemie_laser"]
-[connection signal="player_laser" from="Elements/Soldat/enemieLudoStyle2" to="." method="_on_enemie_laser"]
-[connection signal="player_laser" from="Elements/Soldat/enemieLudoStyle3" to="." method="_on_enemie_laser"]
-[connection signal="player_laser" from="Elements/Soldat/enemieLudoStyle4" to="." method="_on_enemie_laser"]
+[connection signal="player_laser_robot" from="Elements/Soldat/enemieLudoStyle" to="." method="_on_enemie_laser"]
+[connection signal="player_laser_robot" from="Elements/Soldat/enemieLudoStyle2" to="." method="_on_enemie_laser"]
+[connection signal="player_laser_robot" from="Elements/Soldat/enemieLudoStyle3" to="." method="_on_enemie_laser"]
+[connection signal="player_laser_robot" from="Elements/Soldat/enemieLudoStyle4" to="." method="_on_enemie_laser"]
+[connection signal="player_laser_robot" from="Elements/Robot/Robot_troop" to="." method="_on_enemie_robot_laser"]
+[connection signal="player_laser_robot" from="Elements/Robot/Robot_troop2" to="." method="_on_enemie_robot_laser"]
