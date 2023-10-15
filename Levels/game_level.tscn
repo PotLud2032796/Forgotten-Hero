@@ -1,35 +1,12 @@
-[gd_scene load_steps=6 format=3 uid="uid://bmrp60xxohj5h"]
+[gd_scene load_steps=3 format=3 uid="uid://bmrp60xxohj5h"]
 
 [ext_resource type="Script" path="res://Levels/game_level.gd" id="1_65r3a"]
 [ext_resource type="PackedScene" uid="uid://duvbuedwgmnov" path="res://Objects/Scene/Level/Levels/level_1.tscn" id="1_mcar0"]
-[ext_resource type="PackedScene" uid="uid://djv7h78y5oiql" path="res://Characters/player_mouse.tscn" id="1_q0p85"]
-
-[sub_resource type="Gradient" id="Gradient_g2yms"]
-offsets = PackedFloat32Array(0.989011, 0.992674, 1)
-colors = PackedColorArray(0, 0, 0, 1, 0.216117, 0.216117, 0.216117, 1, 1, 1, 1, 1)
-
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_4w78p"]
-gradient = SubResource("Gradient_g2yms")
 
 [node name="GameLevel" type="Node2D"]
 script = ExtResource("1_65r3a")
 
-[node name="Temporary_background" type="Sprite2D" parent="."]
-scale = Vector2(600, 380)
-texture = SubResource("GradientTexture1D_4w78p")
-
-[node name="Active Level" type="Node2D" parent="."]
+[node name="Level_1" parent="." instance=ExtResource("1_mcar0")]
 position = Vector2(-2, 0)
 
-[node name="Level_1" parent="Active Level" instance=ExtResource("1_mcar0")]
-
-[node name="PlayerMouse" parent="." instance=ExtResource("1_q0p85")]
-position = Vector2(33, 99)
-max_speed = 125.0
-accel = 1000.0
-friction = 2500.0
-dash_cooldown = 2.0
-
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(13, -16)
-zoom = Vector2(0.59, 0.59)
+[connection signal="level_finished" from="Level_1" to="." method="_on_level_finished"]
