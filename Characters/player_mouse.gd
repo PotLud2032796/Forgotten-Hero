@@ -6,6 +6,12 @@ extends CharacterBody2D
 @export var friction : float = 1250
 @export var dash_speed : float = 400
 @export var dash_cooldown : float = 1
+@export var starting_direction : Vector2 = Vector2(0, 1)
+
+# parameters/idle/blend_position
+
+@onready var animation_tree = $AnimationTree
+@onready var state_machine = animation_tree.get("parameters/playback")
 
 # Variables internes
 var can_dash : bool = true
@@ -13,6 +19,7 @@ var dash_timer : Timer
 
 func _ready():
 	dash_timer = $DashTimer
+	update_animation_paramaters(starting_direction)
 
 func _physics_process(delta):
 	player_movement(delta)
@@ -21,6 +28,8 @@ func get_input():
 	var input = Vector2.ZERO
 	input.x = int(Input.is_action_pressed("right")) - int(Input.is_action_pressed("left"))
 	input.y = int(Input.is_action_pressed("down")) - int(Input.is_action_pressed("up"))
+	update_animation_paramaters(input)
+	pick_new_state()
 	return input.normalized()
 
 func player_movement(delta):
@@ -29,14 +38,13 @@ func player_movement(delta):
 	if input == Vector2.ZERO:
 		var friction_force = velocity.normalized() * (friction * delta)
 		velocity = velocity.move_toward(Vector2.ZERO, friction_force.length())
-	else:
+	else:	
 		velocity = velocity.move_toward(input * max_speed, accel * delta)
-
-	move_and_slide()
 
 	if Input.is_action_just_pressed("dash") and can_dash:
 		dash()
 
+	move_and_slide()
 
 func dash():
 	var dash_direction = velocity.normalized()
@@ -46,3 +54,14 @@ func dash():
 
 func _on_dash_timer_timeout():
 	can_dash = true
+
+func update_animation_paramaters(move_input : Vector2):
+	if(move_input != Vector2.ZERO):
+		animation_tree.set("parameters/run/blend_position", move_input)
+		animation_tree.set("parameters/idle/blend_position", move_input)
+		
+func pick_new_state():
+	if(velocity != Vector2.ZERO):
+		state_machine.travel("run")
+	else:
+		state_machine.travel("idle")

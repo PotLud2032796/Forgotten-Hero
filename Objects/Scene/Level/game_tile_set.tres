@@ -1,4 +1,4 @@
-[gd_resource type="TileSet" load_steps=6 format=3 uid="uid://b4np3bj8hmygb"]
+[gd_resource type="TileSet" load_steps=6 format=3 uid="uid://0s17r6b321eg"]
 
 [ext_resource type="Texture2D" uid="uid://b33jk4s2tjrun" path="res://Placeholder/16x16/Tilesets/Solaria Demo Update 01.png" id="1_5024r"]
 [ext_resource type="Texture2D" uid="uid://dn44hhoxreu41" path="res://Sprites/Tileset/ashlands_tileset.png" id="2_fhqw0"]

@@ -25,10 +25,6 @@ position = Vector2(-2, 0)
 
 [node name="PlayerMouse" parent="." instance=ExtResource("1_q0p85")]
 position = Vector2(33, 99)
-max_speed = 125.0
-accel = 1000.0
-friction = 2500.0
-dash_cooldown = 2.0
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(13, -16)
