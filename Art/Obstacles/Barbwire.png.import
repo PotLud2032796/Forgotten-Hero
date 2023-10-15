@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://br2my4qfp23uy"
-path="res://.godot/imported/Barbwire.png-72351b31c84b5aa9d121ab4bc22a0a0e.ctex"
+path="res://.godot/imported/Barbwire.png-98b5e3a32a229ed73be885c8436b32d1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Obstacles/Barbwire.png"
-dest_files=["res://.godot/imported/Barbwire.png-72351b31c84b5aa9d121ab4bc22a0a0e.ctex"]
+source_file="res://Art/Obstacles/Barbwire.png"
+dest_files=["res://.godot/imported/Barbwire.png-98b5e3a32a229ed73be885c8436b32d1.ctex"]
 
 [params]
 

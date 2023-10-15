@@ -1,11 +1,11 @@
 [gd_resource type="TileSet" load_steps=4 format=3 uid="uid://b4np3bj8hmygb"]
 
-[ext_resource type="Texture2D" uid="uid://dn44hhoxreu41" path="res://Sprites/Tileset/ashlands_tileset.png" id="2_fhqw0"]
+[ext_resource type="Texture2D" uid="uid://dn44hhoxreu41" path="res://Art/Tileset/ashlands_tileset.png" id="1_kl76t"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_p0xsh"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_m24pb"]
-texture = ExtResource("2_fhqw0")
+texture = ExtResource("1_kl76t")
 1:1/0 = 0
 1:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 1:1/0/physics_layer_0/angular_velocity = 0.0
@@ -333,10 +333,12 @@ texture = ExtResource("2_fhqw0")
 33:5/0/z_index = 2
 33:5/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 33:5/0/physics_layer_0/angular_velocity = 0.0
+33:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(1.875, -0.75, 8, -0.5, 8, 8, 1, 8)
 34:5/0 = 0
 34:5/0/z_index = 2
 34:5/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 34:5/0/physics_layer_0/angular_velocity = 0.0
+34:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -0.375, -1.5, -0.75, -0.25, 8, -8, 8)
 35:5/0 = 0
 35:5/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 35:5/0/physics_layer_0/angular_velocity = 0.0
