@@ -15,6 +15,7 @@ position = Vector2(70, 138)
 max_balle = 5
 
 [node name="enemieLudoStyle" parent="." instance=ExtResource("4_jgo7b")]
+position = Vector2(62, 80)
 
 [connection signal="player_laser" from="enemieLudoStyle2" to="." method="_on_enemie_ludo_style_2_player_laser"]
 [connection signal="player_laser" from="enemieLudoStyle" to="." method="_on_enemie_ludo_style_player_laser"]
