@@ -1,6 +1,6 @@
 [gd_scene load_steps=12 format=3 uid="uid://denrccuat35r8"]
 
-[ext_resource type="Script" path="res://Objects/Scene/Level/Levels/level_1.gd" id="1_fpm4y"]
+[ext_resource type="Script" path="res://Objects/Scene/Level/Levels/level_3.gd" id="1_mcftq"]
 [ext_resource type="TileSet" uid="uid://b4np3bj8hmygb" path="res://Objects/Scene/Level/game_tile_set.tres" id="2_f0u6w"]
 [ext_resource type="PackedScene" path="res://Objects/Scene/Level/finish_door.tscn" id="3_xfs20"]
 [ext_resource type="PackedScene" uid="uid://s0uq4eufsj28" path="res://Objects/Scene/Level/Obstacle/barbwire.tscn" id="4_6beji"]
@@ -18,7 +18,7 @@ colors = PackedColorArray(0, 0, 0, 1, 0.216117, 0.216117, 0.216117, 1, 1, 1, 1, 
 gradient = SubResource("Gradient_g2yms")
 
 [node name="Level_3" type="Node2D"]
-script = ExtResource("1_fpm4y")
+script = ExtResource("1_mcftq")
 
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2(40, 106)

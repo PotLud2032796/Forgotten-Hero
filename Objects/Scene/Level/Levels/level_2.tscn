@@ -1,18 +1,18 @@
-[gd_scene load_steps=16 format=3 uid="uid://blydh0r1jibku"]
+[gd_scene load_steps=16 format=3 uid="uid://ch330y2q0f21i"]
 
 [ext_resource type="TileSet" uid="uid://b4np3bj8hmygb" path="res://Objects/Scene/Level/game_tile_set.tres" id="1_hjg83"]
 [ext_resource type="Script" path="res://Objects/Scene/Level/Levels/level_2.gd" id="1_oin6k"]
 [ext_resource type="PackedScene" uid="uid://s0uq4eufsj28" path="res://Objects/Scene/Level/Obstacle/barbwire.tscn" id="2_00w2d"]
 [ext_resource type="PackedScene" path="res://Objects/Scene/Level/finish_door.tscn" id="3_4uyun"]
 [ext_resource type="PackedScene" uid="uid://djv7h78y5oiql" path="res://Characters/player_mouse.tscn" id="4_5xcup"]
-[ext_resource type="PackedScene" path="res://Enemie/homme/enemieHommeLittleSoldier.tscn" id="4_tt6df"]
+[ext_resource type="PackedScene" uid="uid://flokmile2da8" path="res://Enemie/homme/enemieHommeLittleSoldier.tscn" id="4_tt6df"]
 [ext_resource type="PackedScene" path="res://Enemie/robot/enemie_robot_big_roboto.tscn" id="5_h2sbw"]
 [ext_resource type="PackedScene" uid="uid://x76oa8uko4s4" path="res://Enemie/robot/ennemi_robot_troop.tscn" id="6_m2wjj"]
 [ext_resource type="PackedScene" uid="uid://mfu61hyy2kri" path="res://Objects/Scene/Level/Obstacle/wall_vertical.tscn" id="7_e0jmt"]
 [ext_resource type="PackedScene" uid="uid://bpch8vigv37va" path="res://Objects/Scene/Level/Obstacle/box.tscn" id="8_m4dqx"]
 [ext_resource type="PackedScene" uid="uid://pv7u8ay2uot3" path="res://Objects/Scene/Level/Obstacle/small_box.tscn" id="9_17yqk"]
 [ext_resource type="PackedScene" uid="uid://cggeqjfouvmpy" path="res://Objects/Scene/Level/Obstacle/wall_horizontal.tscn" id="10_ssj40"]
-[ext_resource type="PackedScene" path="res://Enemie/homme/enemie_homme_big_man.tscn" id="12_2uu6b"]
+[ext_resource type="PackedScene" uid="uid://cgh5i7ahd31y0" path="res://Enemie/homme/enemie_homme_big_man.tscn" id="12_2uu6b"]
 
 [sub_resource type="Gradient" id="Gradient_g2yms"]
 offsets = PackedFloat32Array(0.989011, 0.992674, 1)
