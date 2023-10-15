@@ -3,25 +3,27 @@
 [ext_resource type="Script" path="res://Objects/Scene/Level/Obstacle/Scripts/barbwire.gd" id="1_3ks7q"]
 [ext_resource type="Texture2D" uid="uid://br2my4qfp23uy" path="res://Sprites/Obstacles/Barbwire.png" id="2_ta61k"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_a6u1g"]
-size = Vector2(45, 12)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8kftk"]
-size = Vector2(49, 2.15856)
+size = Vector2(46.75, 1.56986)
 
-[node name="Area2D" type="Area2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a6u1g"]
+size = Vector2(50, 1.96232)
+
+[node name="StaticBody2D" type="StaticBody2D"]
+scale = Vector2(1, 5.096)
 script = ExtResource("1_3ks7q")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(2, -1.96232)
+scale = Vector2(1, 0.196232)
 texture = ExtResource("2_ta61k")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-2.5, 12)
+shape = SubResource("RectangleShape2D_8kftk")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("RectangleShape2D_a6u1g")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-scale = Vector2(1, 5.096)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(-2.5, 2.06044)
-shape = SubResource("RectangleShape2D_8kftk")
+[connection signal="body_entered" from="Area2D" to="." method="_on_body_entered"]

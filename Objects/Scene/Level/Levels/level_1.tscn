@@ -43,76 +43,84 @@ layer_2/y_sort_origin = 0
 layer_2/z_index = 0
 layer_2/tile_data = PackedInt32Array(-524295, 1376257, 14, -393215, 1507329, 14, -327679, 1507329, 15, -393214, 1572865, 14, -327678, 1572865, 15, -786433, 1638401, 14, -720897, 1638401, 15, -851968, 1703937, 14, -786432, 1703937, 15, -851967, 1769473, 14, -786431, 1769473, 15, -65544, 1507329, 16, -524287, 1441793, 16, -720902, 1376257, 16, -851971, 1376257, 16, -983037, 2162689, 4, -196612, 2162689, 3, -131076, 2162689, 4, -65540, 2162689, 5, -4, 2162689, 6, -196611, 2228225, 3, -131075, 2228225, 4, -65539, 2228225, 5, -3, 2228225, 6, -786441, 2162689, 3, -720905, 2162689, 4, -655369, 2162689, 5, -589833, 2162689, 6, -786440, 2228225, 3, -720904, 2228225, 4, -655368, 2228225, 5, -589832, 2228225, 6, -1048573, 2162689, 3, -917501, 2162689, 5, -851965, 2162689, 6, -1048572, 2228225, 3, -983036, 2228225, 4, -917500, 2228225, 5, -851964, 2228225, 6, -983050, 1900545, 6, -983049, 1376257, 6, -983048, 1835009, 6, -917514, 65537, 7, -917513, 131073, 7, -917512, 196609, 7, -393222, 2097153, 5, -327686, 2097153, 6, -589821, 2031617, 5, -524285, 2031617, 6, -1048578, 2228225, 19, -983042, 2228225, 20, -1048577, 2293761, 19, -983041, 2293761, 20)
 
-[node name="Obstacles" type="Node2D" parent="."]
-
-[node name="Area2D" parent="Obstacles" instance=ExtResource("2_pijqx")]
-position = Vector2(-16, -43)
-
-[node name="Area2D2" parent="Obstacles" instance=ExtResource("2_pijqx")]
-position = Vector2(35, -43)
-
-[node name="Area2D3" parent="Obstacles" instance=ExtResource("2_pijqx")]
-position = Vector2(-66, -43)
-
 [node name="FinishDoor" parent="." instance=ExtResource("4_iylhd")]
 position = Vector2(24, -146)
 scale = Vector2(1.19869, 0.64876)
 
-[node name="PlayerMouse" parent="." instance=ExtResource("7_6xfi8")]
-position = Vector2(85, 123)
-friction = 2500.0
-
-[node name="Soldat" type="Node2D" parent="."]
-
-[node name="SoldatGunAnim1" type="Sprite2D" parent="Soldat"]
-position = Vector2(-144, 79)
-scale = Vector2(0.3125, 0.3125)
-texture = ExtResource("7_j4cfq")
-
-[node name="SoldatGunAnim2" type="Sprite2D" parent="Soldat"]
-position = Vector2(-144, 42)
-scale = Vector2(0.3125, 0.3125)
-texture = ExtResource("7_j4cfq")
-
-[node name="SoldatGunAnim3" type="Sprite2D" parent="Soldat"]
-position = Vector2(-145, -10)
-scale = Vector2(0.3125, 0.3125)
-texture = ExtResource("7_j4cfq")
-
-[node name="SoldatGunAnim5" type="Sprite2D" parent="Soldat"]
-position = Vector2(-64, 5)
-scale = Vector2(0.3125, 0.3125)
-texture = ExtResource("7_j4cfq")
-
-[node name="SoldatGunAnim4" type="Sprite2D" parent="Soldat"]
-position = Vector2(-146, -63)
-scale = Vector2(0.3125, 0.3125)
-texture = ExtResource("7_j4cfq")
-
-[node name="Robot" type="Node2D" parent="."]
-
-[node name="LazerChargeAnim1" type="Sprite2D" parent="Robot"]
-position = Vector2(142, 74)
-scale = Vector2(0.322695, 0.322695)
-texture = ExtResource("6_d13t6")
-
-[node name="LazerChargeAnim2" type="Sprite2D" parent="Robot"]
-position = Vector2(141, 7)
-scale = Vector2(0.322695, 0.322695)
-texture = ExtResource("6_d13t6")
-
-[node name="LazerChargeAnim3" type="Sprite2D" parent="Robot"]
-position = Vector2(141, -71)
-scale = Vector2(0.322695, 0.322695)
-texture = ExtResource("6_d13t6")
-
-[node name="LazerChargeAnim4" type="Sprite2D" parent="Robot"]
-position = Vector2(142, -33)
-scale = Vector2(0.322695, 0.322695)
-texture = ExtResource("6_d13t6")
+[node name="Obstacles" type="Node2D" parent="."]
+y_sort_enabled = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(13, -16)
 zoom = Vector2(0.59, 0.59)
 
+[node name="Elements" type="Node2D" parent="."]
+y_sort_enabled = true
+
+[node name="Area2D" parent="Elements" instance=ExtResource("2_pijqx")]
+position = Vector2(-16, -43)
+
+[node name="Area2D2" parent="Elements" instance=ExtResource("2_pijqx")]
+position = Vector2(35, -43)
+
+[node name="Area2D3" parent="Elements" instance=ExtResource("2_pijqx")]
+position = Vector2(-66, -43)
+
+[node name="Soldat" type="Node2D" parent="Elements"]
+
+[node name="SoldatGunAnim1" type="Sprite2D" parent="Elements/Soldat"]
+position = Vector2(-144, 79)
+scale = Vector2(0.3125, 0.3125)
+texture = ExtResource("7_j4cfq")
+
+[node name="SoldatGunAnim2" type="Sprite2D" parent="Elements/Soldat"]
+position = Vector2(-144, 42)
+scale = Vector2(0.3125, 0.3125)
+texture = ExtResource("7_j4cfq")
+
+[node name="SoldatGunAnim3" type="Sprite2D" parent="Elements/Soldat"]
+position = Vector2(-145, -10)
+scale = Vector2(0.3125, 0.3125)
+texture = ExtResource("7_j4cfq")
+
+[node name="SoldatGunAnim5" type="Sprite2D" parent="Elements/Soldat"]
+position = Vector2(-64, 5)
+scale = Vector2(0.3125, 0.3125)
+texture = ExtResource("7_j4cfq")
+
+[node name="SoldatGunAnim4" type="Sprite2D" parent="Elements/Soldat"]
+position = Vector2(-146, -63)
+scale = Vector2(0.3125, 0.3125)
+texture = ExtResource("7_j4cfq")
+
+[node name="Robot" type="Node2D" parent="Elements"]
+
+[node name="LazerChargeAnim1" type="Sprite2D" parent="Elements/Robot"]
+position = Vector2(142, 74)
+scale = Vector2(0.322695, 0.322695)
+texture = ExtResource("6_d13t6")
+
+[node name="LazerChargeAnim2" type="Sprite2D" parent="Elements/Robot"]
+position = Vector2(141, 7)
+scale = Vector2(0.322695, 0.322695)
+texture = ExtResource("6_d13t6")
+
+[node name="LazerChargeAnim3" type="Sprite2D" parent="Elements/Robot"]
+position = Vector2(141, -71)
+scale = Vector2(0.322695, 0.322695)
+texture = ExtResource("6_d13t6")
+
+[node name="LazerChargeAnim4" type="Sprite2D" parent="Elements/Robot"]
+position = Vector2(142, -33)
+scale = Vector2(0.322695, 0.322695)
+texture = ExtResource("6_d13t6")
+
+[node name="PlayerMouse" parent="Elements" instance=ExtResource("7_6xfi8")]
+y_sort_enabled = true
+position = Vector2(85, 123)
+friction = 2500.0
+
 [connection signal="body_entered" from="FinishDoor" to="." method="_on_finish_door_body_entered"]
+[connection signal="player_touched" from="Elements/Area2D" to="." method="_on_player_touched"]
+[connection signal="player_touched" from="Elements/Area2D2" to="." method="_on_player_touched"]
+[connection signal="player_touched" from="Elements/Area2D3" to="." method="_on_player_touched"]
