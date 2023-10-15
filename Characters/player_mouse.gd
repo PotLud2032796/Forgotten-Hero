@@ -16,6 +16,7 @@ extends CharacterBody2D
 # Variables internes
 var can_dash : bool = true
 var dash_timer : Timer
+var is_dashing : bool = false
 
 func _ready():
 	dash_timer = $DashTimer
@@ -47,21 +48,34 @@ func player_movement(delta):
 	move_and_slide()
 
 func dash():
+	$DashAnimationTimer.start()
+	is_dashing = true
 	var dash_direction = velocity.normalized()
 	velocity = dash_direction * dash_speed
 	dash_timer.start(dash_cooldown)
-	can_dash = false
+
+
+
 
 func _on_dash_timer_timeout():
 	can_dash = true
+	
 
 func update_animation_paramaters(move_input : Vector2):
 	if(move_input != Vector2.ZERO):
 		animation_tree.set("parameters/run/blend_position", move_input)
 		animation_tree.set("parameters/idle/blend_position", move_input)
+		animation_tree.set("parameters/dash/blend_position", move_input)
 		
 func pick_new_state():
-	if(velocity != Vector2.ZERO):
+	if(velocity != Vector2.ZERO) and is_dashing == true:
+		state_machine.travel("dash")
+		print("dashAnimation")
+	if(velocity != Vector2.ZERO) and is_dashing == false:
 		state_machine.travel("run")
-	else:
+	elif(is_dashing == false):
 		state_machine.travel("idle")
+
+
+func _on_dash_animation_timer_timeout():
+	is_dashing = false
