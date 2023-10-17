@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://x76oa8uko4s4"]
 
-[ext_resource type="Script" path="res://Enemie/enemie.gd" id="1_ba2gt"]
-[ext_resource type="Texture2D" uid="uid://vudifxp5y8ue" path="res://Art/robot/turret_shoot.png" id="2_wlbuh"]
+[ext_resource type="Script" path="res://entities/enemies/robots/scripts/robot_turret.gd" id="1_lh0lx"]
+[ext_resource type="Texture2D" uid="uid://vudifxp5y8ue" path="res://entities/enemies/robots/assets/sprites/robot_turret.png" id="2_4ukb5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w5uw8"]
 size = Vector2(17.9456, 27.2773)
@@ -46,10 +46,10 @@ _data = {
 
 [node name="Robot_troop" type="CharacterBody2D"]
 scale = Vector2(1.3931, 1.3931)
-script = ExtResource("1_ba2gt")
+script = ExtResource("1_lh0lx")
 
 [node name="Sprite" type="Sprite2D" parent="."]
-texture = ExtResource("2_wlbuh")
+texture = ExtResource("2_4ukb5")
 hframes = 5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

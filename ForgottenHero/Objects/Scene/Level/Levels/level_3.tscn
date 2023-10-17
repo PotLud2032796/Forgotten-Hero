@@ -2,11 +2,11 @@
 
 [ext_resource type="Script" path="res://Objects/Scene/Level/Levels/level_3.gd" id="1_mcftq"]
 [ext_resource type="TileSet" uid="uid://b4np3bj8hmygb" path="res://Objects/Scene/Level/game_tile_set.tres" id="2_f0u6w"]
-[ext_resource type="PackedScene" path="res://Objects/Scene/Level/finish_door.tscn" id="3_xfs20"]
+[ext_resource type="PackedScene" uid="uid://d0um0hx5pa1od" path="res://Objects/Scene/Level/finish_door.tscn" id="3_xfs20"]
 [ext_resource type="PackedScene" uid="uid://s0uq4eufsj28" path="res://Objects/Scene/Level/Obstacle/barbwire.tscn" id="4_6beji"]
 [ext_resource type="PackedScene" uid="uid://3nm7garna6nc" path="res://Enemie/enemie.tscn" id="5_is7fd"]
 [ext_resource type="PackedScene" uid="uid://x76oa8uko4s4" path="res://Enemie/robot/ennemi_robot_troop.tscn" id="6_u6jx7"]
-[ext_resource type="PackedScene" uid="uid://djv7h78y5oiql" path="res://Characters/player_mouse.tscn" id="7_7g8xv"]
+[ext_resource type="PackedScene" uid="uid://djv7h78y5oiql" path="res://entities/player/player_mouse.tscn" id="7_7g8xv"]
 [ext_resource type="PackedScene" uid="uid://pv7u8ay2uot3" path="res://Objects/Scene/Level/Obstacle/small_box.tscn" id="8_yd3u4"]
 [ext_resource type="PackedScene" uid="uid://bpch8vigv37va" path="res://Objects/Scene/Level/Obstacle/box.tscn" id="9_ovuy0"]
 

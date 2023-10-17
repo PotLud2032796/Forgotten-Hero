@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://2me7peianbue"
-path="res://.godot/imported/Robot_bullet_big.png-6ccb16cbb34d196699a60624646fdd91.ctex"
+uid="uid://nsqlcfqyd5sn"
+path="res://.godot/imported/player_mouse.png-40a7064900436485f5b6a697261e8179.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/robot/Robot_bullet_big.png"
-dest_files=["res://.godot/imported/Robot_bullet_big.png-6ccb16cbb34d196699a60624646fdd91.ctex"]
+source_file="res://entities/player/player_mouse.png"
+dest_files=["res://.godot/imported/player_mouse.png-40a7064900436485f5b6a697261e8179.ctex"]
 
 [params]
 

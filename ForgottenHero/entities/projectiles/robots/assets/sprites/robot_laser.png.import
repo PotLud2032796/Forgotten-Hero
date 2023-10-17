@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cbw1c2tm2vvii"
-path="res://.godot/imported/Souris_run_down.png-4db518d8b99b28fd6bf91d46433310c9.ctex"
+uid="uid://2me7peianbue"
+path="res://.godot/imported/robot_laser.png-a5a8a3ae3593fba0360b10f29c08c2e8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/Assets/Souris/Souris_run_down.png"
-dest_files=["res://.godot/imported/Souris_run_down.png-4db518d8b99b28fd6bf91d46433310c9.ctex"]
+source_file="res://entities/projectiles/robots/assets/sprites/robot_laser.png"
+dest_files=["res://.godot/imported/robot_laser.png-a5a8a3ae3593fba0360b10f29c08c2e8.ctex"]
 
 [params]
 

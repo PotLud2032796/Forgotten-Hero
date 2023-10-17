@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bsl0w00i2ml87"
-path="res://.godot/imported/Souris_roll_left.png-1c0681d783885f1288e6992c2d32f914.ctex"
+uid="uid://bpo7s5t7fv34q"
+path="res://.godot/imported/robot_beam.png-b02fb151d807cc4061aa882c20848b35.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/Assets/Souris/Souris_roll_left.png"
-dest_files=["res://.godot/imported/Souris_roll_left.png-1c0681d783885f1288e6992c2d32f914.ctex"]
+source_file="res://entities/projectiles/robots/assets/sprites/robot_beam.png"
+dest_files=["res://.godot/imported/robot_beam.png-b02fb151d807cc4061aa882c20848b35.ctex"]
 
 [params]
 

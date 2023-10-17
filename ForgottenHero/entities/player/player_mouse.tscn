@@ -1,7 +1,7 @@
 [gd_scene load_steps=40 format=3 uid="uid://djv7h78y5oiql"]
 
-[ext_resource type="Script" path="res://Characters/player_mouse.gd" id="1_j1q5l"]
-[ext_resource type="Texture2D" uid="uid://nsqlcfqyd5sn" path="res://Art/Assets/Souris/Souris-sheet-ALL.png" id="2_v3wej"]
+[ext_resource type="Script" path="res://entities/player/player_mouse.gd" id="1_j1q5l"]
+[ext_resource type="Texture2D" uid="uid://nsqlcfqyd5sn" path="res://entities/player/player_mouse.png" id="2_v3wej"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wh3yj"]
 size = Vector2(10, 5)

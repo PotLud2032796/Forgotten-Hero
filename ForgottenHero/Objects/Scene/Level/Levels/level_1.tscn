@@ -3,10 +3,10 @@
 [ext_resource type="Script" path="res://Objects/Scene/Level/Levels/level_1.gd" id="1_1fy76"]
 [ext_resource type="TileSet" uid="uid://b4np3bj8hmygb" path="res://Objects/Scene/Level/game_tile_set.tres" id="2_86grb"]
 [ext_resource type="PackedScene" uid="uid://s0uq4eufsj28" path="res://Objects/Scene/Level/Obstacle/barbwire.tscn" id="2_pijqx"]
-[ext_resource type="PackedScene" path="res://Objects/Scene/Level/finish_door.tscn" id="4_iylhd"]
+[ext_resource type="PackedScene" uid="uid://d0um0hx5pa1od" path="res://Objects/Scene/Level/finish_door.tscn" id="4_iylhd"]
 [ext_resource type="PackedScene" uid="uid://3nm7garna6nc" path="res://Enemie/enemie.tscn" id="5_d3f0a"]
-[ext_resource type="PackedScene" uid="uid://x76oa8uko4s4" path="res://Enemie/robot/ennemi_robot_troop.tscn" id="6_0lwkf"]
-[ext_resource type="PackedScene" uid="uid://djv7h78y5oiql" path="res://Characters/player_mouse.tscn" id="7_6xfi8"]
+[ext_resource type="PackedScene" uid="uid://x76oa8uko4s4" path="res://entities/enemies/robots/scenes/robot_turret.tscn" id="6_0lwkf"]
+[ext_resource type="PackedScene" uid="uid://djv7h78y5oiql" path="res://entities/player/player_mouse.tscn" id="7_6xfi8"]
 
 [sub_resource type="Gradient" id="Gradient_g2yms"]
 offsets = PackedFloat32Array(0.989011, 0.992674, 1)

@@ -3,7 +3,7 @@ extends Node2D
 signal player_died
 
 var laser_scene: PackedScene = preload("res://Enemie/laser.tscn")
-var laser_robot_scene: PackedScene = preload("res://Enemie/robot/laser_gros_ennemi.tscn")
+var laser_robot_scene: PackedScene = preload("res://entities/projectiles/robots/scenes/robot_laser.tscn")
 
 func _on_enemie_laser(pos):
 	var laser = laser_scene.instantiate()

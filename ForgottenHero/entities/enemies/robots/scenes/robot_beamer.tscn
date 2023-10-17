@@ -1,9 +1,9 @@
 [gd_scene load_steps=9 format=3 uid="uid://dsyy0uj1jef5y"]
 
-[ext_resource type="PackedScene" uid="uid://3nm7garna6nc" path="res://Enemie/enemie.tscn" id="1_pejfo"]
-[ext_resource type="Script" path="res://Enemie/robot/enemie_robot_big_roboto.gd" id="2_bk8l2"]
-[ext_resource type="Texture2D" uid="uid://dxwm4yxxo6y1u" path="res://Art/robot/Lazer_Charge_anim.png" id="2_i68pa"]
-[ext_resource type="Texture2D" uid="uid://bpo7s5t7fv34q" path="res://Art/robot/Lazer_Bullets.png" id="3_usmaw"]
+[ext_resource type="PackedScene" uid="uid://3nm7garna6nc" path="res://Enemie/enemie.tscn" id="1_tdwfk"]
+[ext_resource type="Script" path="res://entities/enemies/robots/scripts/robot_beamer.gd" id="2_307vg"]
+[ext_resource type="Texture2D" uid="uid://dxwm4yxxo6y1u" path="res://entities/enemies/robots/assets/sprites/robot_beamer.png" id="3_35nbd"]
+[ext_resource type="Texture2D" uid="uid://bpo7s5t7fv34q" path="res://entities/projectiles/robots/assets/sprites/robot_beam.png" id="4_8pfpt"]
 
 [sub_resource type="Animation" id="Animation_4ek0b"]
 length = 0.001
@@ -143,11 +143,11 @@ _data = {
 radius = 13.0
 height = 338.0
 
-[node name="enemie_robot_big_roboto" instance=ExtResource("1_pejfo")]
-script = ExtResource("2_bk8l2")
+[node name="enemie_robot_big_roboto" instance=ExtResource("1_tdwfk")]
+script = ExtResource("2_307vg")
 
 [node name="Sprite" parent="." index="0"]
-texture = ExtResource("2_i68pa")
+texture = ExtResource("3_35nbd")
 hframes = 31
 
 [node name="CollisionShape2D" parent="." index="1"]
@@ -168,9 +168,9 @@ collision_layer = 2
 collision_mask = 0
 
 [node name="Sprite2D" type="Sprite2D" parent="Area2D" index="0"]
-position = Vector2(-163, -10)
+position = Vector2(-163, -9)
 scale = Vector2(0.88, 1)
-texture = ExtResource("3_usmaw")
+texture = ExtResource("4_8pfpt")
 hframes = 17
 frame = 16
 

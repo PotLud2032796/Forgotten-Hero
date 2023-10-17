@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://cu3ht8wtdxjaq"]
 
-[ext_resource type="Script" path="res://Enemie/robot/laser_gros_ennemi.gd" id="1_swrwl"]
-[ext_resource type="Texture2D" uid="uid://2me7peianbue" path="res://Art/robot/Robot_bullet_big.png" id="2_3vcjv"]
+[ext_resource type="Script" path="res://entities/projectiles/robots/scripts/robot_laser.gd" id="1_po30a"]
+[ext_resource type="Texture2D" uid="uid://2me7peianbue" path="res://entities/projectiles/robots/assets/sprites/robot_laser.png" id="2_dcwmf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f8yxb"]
 size = Vector2(16, 9)
@@ -9,10 +9,10 @@ size = Vector2(16, 9)
 [node name="Laser_ennemi" type="Area2D"]
 collision_layer = 2
 collision_mask = 0
-script = ExtResource("1_swrwl")
+script = ExtResource("1_po30a")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_3vcjv")
+texture = ExtResource("2_dcwmf")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_f8yxb")

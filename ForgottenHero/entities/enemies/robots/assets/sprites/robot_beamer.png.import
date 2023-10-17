@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dbxn6sfechi5u"
-path="res://.godot/imported/Souris_run_left.png-3b6f2a99882cbacaa604a56692251a05.ctex"
+uid="uid://dxwm4yxxo6y1u"
+path="res://.godot/imported/robot_beamer.png-425863b5636ae3581480966514e598d6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/Assets/Souris/Souris_run_left.png"
-dest_files=["res://.godot/imported/Souris_run_left.png-3b6f2a99882cbacaa604a56692251a05.ctex"]
+source_file="res://entities/enemies/robots/assets/sprites/robot_beamer.png"
+dest_files=["res://.godot/imported/robot_beamer.png-425863b5636ae3581480966514e598d6.ctex"]
 
 [params]
 
