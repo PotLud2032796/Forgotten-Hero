@@ -22,8 +22,6 @@ var is_dashing : bool = false
 var dash_direction: Vector2
 var is_invincible: bool = false
 
-
-
 func _ready():
 	dash_timer = $DashTimer
 	update_animation_paramaters(starting_direction)
@@ -33,7 +31,7 @@ func _physics_process(delta):
 	if !isHurt:
 		for area in hurt_box.get_overlapping_areas():
 			if !is_invincible:
-				get_tree().change_scene_to_file("res://HUD/game_over.tscn")
+				get_tree().change_scene_to_file("res://menus/scenes/game_over.tscn")
 
 func get_input():
 	var input = Vector2.ZERO

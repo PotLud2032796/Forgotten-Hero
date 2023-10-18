@@ -1,22 +1,19 @@
 extends CharacterBody2D
 
+const SPEED = 800
+
 var can_laser: bool = true
 var can_burst: bool = true
 var wait: bool = true
 
-@onready var animation_mega_man = $AnimationPlayer2
-
-#@onready var animation_player_big_man_bullet = preload("res://Enemie/big_man_homme_Bullet.tscn")
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
+@onready var animation_player_big_man = $AnimationPlayer2
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
 	#Shooting
 	if can_laser and can_burst:
-		animation_mega_man = $AnimationPlayer2
-		animation_mega_man.play("shoot_mega_man")
+		animation_player_big_man = $AnimationPlayer2
+		animation_player_big_man.play("ShootBigMen")
 
 func _on_timer_timeout():
 	can_laser = true

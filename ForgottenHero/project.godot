@@ -11,14 +11,14 @@ config_version=5
 [application]
 
 config/name="Gamejam14"
-run/main_scene="res://HUD/main_menu.tscn"
+run/main_scene="res://menus/scenes/main_menu.tscn"
 config/features=PackedStringArray("4.1", "Mobile")
 config/icon="res://icon.svg"
 <<<<<<<HEADrun/main_scene="res://world.tscn"
 
 [autoload]
 
-Transition="*res://HUD/transition.tscn"
+Transition="*res://globals/transition.tscn"
 
 [display]
 

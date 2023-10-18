@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://dh6sadfiiaili"]
+
+[ext_resource type="Script" path="res://entities/projectiles/humans/scripts/human_bullet.gd" id="1_sip1i"]
+[ext_resource type="Texture2D" uid="uid://crclxj08msks0" path="res://entities/projectiles/humans/assets/human_bullet.png" id="2_61yij"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_se3c3"]
+size = Vector2(12, 12)
+
+[node name="Laser" type="Area2D"]
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("1_sip1i")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_61yij")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+light_mask = 2
+shape = SubResource("RectangleShape2D_se3c3")
